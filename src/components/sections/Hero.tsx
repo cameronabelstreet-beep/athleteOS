@@ -11,13 +11,13 @@ export function Hero() {
     <section id="top" className="relative overflow-hidden pt-28 sm:pt-36">
       {/* soft warm glow + faint dotted texture, kept subtle for the light theme */}
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute -top-40 right-[-10%] h-[38rem] w-[38rem] rounded-full bg-[radial-gradient(closest-side,oklch(0.955_0.03_45),transparent)] opacity-80" />
-        <div className="absolute -top-24 left-[-15%] h-[30rem] w-[30rem] rounded-full bg-[radial-gradient(closest-side,oklch(0.97_0.01_60),transparent)]" />
+        <div className="absolute -top-40 right-[-10%] h-[38rem] w-[38rem] rounded-full bg-[radial-gradient(closest-side,oklch(0.9_0.01_265),transparent)] opacity-70" />
+        <div className="absolute -top-24 left-[-15%] h-[30rem] w-[30rem] rounded-full bg-[radial-gradient(closest-side,oklch(0.94_0.012_82),transparent)]" />
         <div
           className="absolute inset-0 opacity-[0.35]"
           style={{
             backgroundImage:
-              "radial-gradient(oklch(0.85 0.01 60) 1px, transparent 1px)",
+              "radial-gradient(oklch(0.82 0.012 82) 1px, transparent 1px)",
             backgroundSize: "26px 26px",
             maskImage:
               "linear-gradient(to bottom, black, transparent 55%)",

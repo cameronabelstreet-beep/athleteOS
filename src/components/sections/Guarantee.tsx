@@ -10,7 +10,7 @@ export function Guarantee() {
         className="pointer-events-none absolute inset-0 -z-0 opacity-70"
         style={{
           background:
-            "radial-gradient(60rem 30rem at 50% -20%, oklch(0.4 0.12 34 / 0.35), transparent)",
+            "radial-gradient(60rem 30rem at 50% -20%, oklch(0.5 0.02 265 / 0.5), transparent)",
         }}
       />
       <Container className="relative">

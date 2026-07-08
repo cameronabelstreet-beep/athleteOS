@@ -99,7 +99,7 @@ export function CTAButton({
   };
   const variants = {
     primary:
-      "bg-accent text-on-accent shadow-[0_1px_0_rgba(0,0,0,0.04),0_8px_24px_-12px_oklch(0.635_0.198_34/0.6)] hover:bg-accent-strong",
+      "bg-accent text-on-accent shadow-[0_1px_0_rgba(0,0,0,0.04),0_10px_28px_-14px_oklch(0.24_0.01_265/0.55)] hover:bg-accent-strong",
     secondary:
       "bg-ink text-on-accent hover:bg-[oklch(0.3_0.02_55)]",
     ghost:

@@ -7,25 +7,25 @@
    ========================================================================== */
 
 @theme {
-  /* Surfaces + ink (warm-tinted neutrals, never pure black/white) */
-  --color-bg: oklch(0.992 0.004 60);
-  --color-surface: oklch(0.972 0.006 62);
-  --color-surface-2: oklch(0.948 0.008 62);
-  --color-ink: oklch(0.23 0.021 55);
-  --color-ink-soft: oklch(0.37 0.02 55);
-  --color-muted: oklch(0.53 0.017 58);
-  --color-line: oklch(0.9 0.008 62);
-  --color-line-soft: oklch(0.94 0.006 62);
+  /* Chalk surfaces (warm cream/linen from the logo light colorway) */
+  --color-bg: oklch(0.958 0.008 83);
+  --color-surface: oklch(0.93 0.01 82);
+  --color-surface-2: oklch(0.9 0.012 82);
+  --color-ink: oklch(0.27 0.008 265);
+  --color-ink-soft: oklch(0.41 0.008 265);
+  --color-muted: oklch(0.55 0.007 265);
+  --color-line: oklch(0.85 0.012 82);
+  --color-line-soft: oklch(0.9 0.01 82);
 
-  /* Accent (energetic coral-red, used rarely) */
-  --color-accent: oklch(0.635 0.198 34);
-  --color-accent-strong: oklch(0.565 0.196 33);
-  --color-accent-tint: oklch(0.955 0.03 45);
-  --color-on-accent: oklch(0.99 0.01 60);
+  /* Slate accent (charcoal from the logo, replaces coral). Monochrome brand. */
+  --color-accent: oklch(0.24 0.01 265);
+  --color-accent-strong: oklch(0.17 0.01 265);
+  --color-accent-tint: oklch(0.9 0.006 265);
+  --color-on-accent: oklch(0.965 0.008 83);
 
-  /* Deep ink surface for the guarantee band */
-  --color-ink-deep: oklch(0.205 0.018 52);
-  --color-ink-deep-2: oklch(0.16 0.015 52);
+  /* Deep slate surface for the guarantee band */
+  --color-ink-deep: oklch(0.21 0.008 265);
+  --color-ink-deep-2: oklch(0.155 0.008 265);
 
   /* Fonts (variables provided by next/font) */
   --font-display: var(--f-display), "Archivo", system-ui, sans-serif;
