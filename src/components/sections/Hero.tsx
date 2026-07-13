@@ -27,39 +27,21 @@ export function Hero() {
         />
       </div>
 
-      <Container className="relative pb-20 sm:pb-28">
-        <div className="grid items-start gap-10 lg:grid-cols-12">
-          <div className="lg:col-span-8">
-            <UrgencyPill>{hero.pill}</UrgencyPill>
+      <Container className="relative pb-10 sm:pb-14">
+        {/* Centered hero. Headline sized down so the long positioning line
+            reads at a controlled scale, then the Results band tucks under it. */}
+        <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
+          <UrgencyPill>{hero.pill}</UrgencyPill>
 
-            <h1 className="mt-6 text-display">
-              <AccentText text={hero.headline} />
-            </h1>
+          <h1 className="mt-6 text-[clamp(2.1rem,1.3rem+2.8vw,3.25rem)] font-black tracking-[-0.03em]">
+            <AccentText text={hero.headline} />
+          </h1>
 
-            <p className="measure mt-6 text-lead text-ink-soft">{hero.sub}</p>
+          <p className="mt-5 max-w-2xl text-lead text-ink-soft">{hero.sub}</p>
 
-            <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
-              <CTAButton size="lg">{hero.cta}</CTAButton>
-              <span className="text-sm text-muted">{hero.microcopy}</span>
-            </div>
-          </div>
-
-          {/* asymmetric guarantee marker, reinforces the promise above the fold */}
-          <div className="lg:col-span-4 lg:pt-10">
-            <div className="relative ml-0 max-w-xs rounded-2xl border border-line bg-surface/70 p-6 lg:ml-auto">
-              <div
-                className="text-[3.25rem] font-extrabold leading-none text-accent"
-                style={{ fontFamily: "var(--font-display)", fontStretch: "112%" }}
-              >
-                2x
-              </div>
-              <p className="mt-3 text-[0.95rem] font-medium text-ink">
-                Double your revenue in 60 days.
-              </p>
-              <p className="mt-1 text-sm text-muted">
-                Or you don&apos;t pay. No upfront payment, the risk is ours.
-              </p>
-            </div>
+          <div className="mt-8 flex flex-col items-center gap-3">
+            <CTAButton size="lg">{hero.cta}</CTAButton>
+            <span className="text-sm text-muted">{hero.microcopy}</span>
           </div>
         </div>
       </Container>

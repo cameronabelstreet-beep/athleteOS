@@ -150,12 +150,35 @@ export function CheckIcon({ className = "" }: { className?: string }) {
   );
 }
 
+/** Circle "A" peak monogram, recreated as a clean vector from the brand mark.
+ *  Uses currentColor so it inherits the accent (or any) color. Swap for the
+ *  official vector when available. */
+export function LogoMark({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 100 100"
+      fill="none"
+      aria-hidden
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle cx="50" cy="50" r="46" stroke="currentColor" strokeWidth="4" />
+      {/* Peak "A" with an upward-arrow counter (evenodd cuts the arrow out). */}
+      <path
+        fill="currentColor"
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M50 20 L76 76 L24 76 Z M50 40 L62 56 L55 56 L55 68 L45 68 L45 56 L38 56 Z"
+      />
+    </svg>
+  );
+}
+
 /** Small brand wordmark used in the nav and footer. */
 export function Wordmark({ className = "" }: { className?: string }) {
   return (
     <span
-      className={`font-[family-name:var(--font-display)] text-lg font-extrabold tracking-tight ${className}`}
-      style={{ fontStretch: "112%" }}
+      className={`font-[family-name:var(--font-display)] text-lg font-black tracking-[-0.04em] ${className}`}
     >
       Athlete<span className="text-accent">OS</span>
     </span>

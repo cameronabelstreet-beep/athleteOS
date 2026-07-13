@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { nav } from "@/lib/content";
-import { CTAButton, Wordmark, applyHref } from "@/components/primitives";
+import { CTAButton, LogoMark, Wordmark, applyHref } from "@/components/primitives";
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -33,7 +33,12 @@ export function Nav() {
         }`}
       >
         <nav className="mx-auto flex h-16 w-full max-w-[76rem] items-center justify-between px-5 sm:px-8">
-          <a href="#top" aria-label="AthleteOS home" className="shrink-0">
+          <a
+            href="#top"
+            aria-label="AthleteOS home"
+            className="flex shrink-0 items-center gap-2.5"
+          >
+            <LogoMark className="h-8 w-8 text-accent" />
             <Wordmark />
           </a>
 

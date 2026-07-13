@@ -17,20 +17,20 @@
   --color-line: oklch(0.85 0.012 82);
   --color-line-soft: oklch(0.9 0.01 82);
 
-  /* Slate accent (charcoal from the logo, replaces coral). Monochrome brand. */
-  --color-accent: oklch(0.24 0.01 265);
-  --color-accent-strong: oklch(0.17 0.01 265);
-  --color-accent-tint: oklch(0.9 0.006 265);
-  --color-on-accent: oklch(0.965 0.008 83);
+  /* Royal Blue accent (Brand Guidelines v2 primary accent) on the chalk theme. */
+  --color-accent: #003e91; /* Royal Blue, primary accent */
+  --color-accent-strong: #002063; /* Deep Blue, hover / emphasis */
+  --color-accent-tint: #e5ecfa; /* light royal-blue wash for pills + eyebrow */
+  --color-on-accent: #ffffff; /* white text on blue */
 
   /* Deep slate surface for the guarantee band */
   --color-ink-deep: oklch(0.21 0.008 265);
   --color-ink-deep-2: oklch(0.155 0.008 265);
 
-  /* Fonts (variables provided by next/font) */
-  --font-display: var(--f-display), "Archivo", system-ui, sans-serif;
-  --font-body: var(--f-body), "Hanken Grotesk", system-ui, sans-serif;
-  --font-accent: var(--f-accent), "Libre Caslon Text", Georgia, serif;
+  /* Fonts — single brand typeface, Montserrat (variable provided by next/font) */
+  --font-display: var(--f-sans), "Montserrat", system-ui, sans-serif;
+  --font-body: var(--f-sans), "Montserrat", system-ui, sans-serif;
+  --font-accent: var(--f-sans), "Montserrat", system-ui, sans-serif;
 
   /* Fluid type scale (>= 1.25 ratio, clamp on headings) */
   --text-display: clamp(2.75rem, 1.6rem + 5.2vw, 5.5rem);
@@ -69,10 +69,9 @@
 
   h1, h2, h3, h4 {
     font-family: var(--font-display);
-    font-weight: 800;
+    font-weight: 700; /* Montserrat 700 headings per brand spec */
     letter-spacing: -0.02em;
-    line-height: 1.02;
-    font-stretch: 112%; /* Archivo width axis, athletic expanded feel */
+    line-height: 1.05;
     text-wrap: balance;
   }
 
@@ -101,13 +100,11 @@
   }
 }
 
-/* Italic serif emphasis word inside headlines */
+/* Italic emphasis word inside headlines (Montserrat italic, inherits weight) */
 .accent-word {
   font-family: var(--font-accent);
-  font-weight: 400;
   font-style: italic;
-  font-stretch: normal;
-  letter-spacing: 0;
+  letter-spacing: -0.01em;
   color: var(--color-accent);
 }
 

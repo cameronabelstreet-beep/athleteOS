@@ -1,28 +1,14 @@
 import type { Metadata, Viewport } from "next";
-import { Archivo, Hanken_Grotesk, Libre_Caslon_Text } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 
-// Headlines: Archivo (variable, with width axis for the athletic expanded feel)
-const display = Archivo({
+// Single brand typeface (Brand Guidelines v2): Montserrat across display, body,
+// and accent. Weights 400 body / 600 labels+UI / 700 headings / 900 display.
+const sans = Montserrat({
   subsets: ["latin"],
-  axes: ["wdth"],
-  variable: "--f-display",
-  display: "swap",
-});
-
-// Body + UI: Hanken Grotesk
-const body = Hanken_Grotesk({
-  subsets: ["latin"],
-  variable: "--f-body",
-  display: "swap",
-});
-
-// Emphasis accent: Libre Caslon Text italic
-const accent = Libre_Caslon_Text({
-  subsets: ["latin"],
-  weight: ["400"],
+  weight: ["400", "500", "600", "700", "900"],
   style: ["normal", "italic"],
-  variable: "--f-accent",
+  variable: "--f-sans",
   display: "swap",
 });
 
@@ -50,10 +36,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang="en"
-      className={`${display.variable} ${body.variable} ${accent.variable}`}
-    >
+    <html lang="en" className={sans.variable}>
       <body>{children}</body>
     </html>
   );

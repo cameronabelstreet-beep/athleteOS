@@ -27,8 +27,9 @@ export const nav = {
 export const hero = {
   pill: `Only ${siteConfig.spotsLeft} onboarding spots left this month`,
   // {accent:...} marks the italic serif emphasis word.
-  headline: "Your fitness brand is {accent:leaking} revenue. You just can't see where.",
-  sub: "You have built the audience and the offer. The leaks are in the backend: your ads, your funnel, your follow up. We find them, fix them, and double your revenue in 60 days or you don't pay.",
+  // Locked positioning copy (Monday Positioning Doc v1, locked June 28, 2026).
+  headline: "The only done-for-you acquisition system built {accent:exclusively} for fitness coaches and influencers.",
+  sub: "We install a done-for-you acquisition system across your ads, funnels, and workflows. Double your revenue in 60 days or you don't pay.",
   cta: "Apply Here",
   microcopy: "Takes under 60 seconds. No upfront payment.",
 };
@@ -37,11 +38,14 @@ export const results = {
   label: "Proof",
   heading: "Results speak {accent:louder} than promises.",
   sub: "Real fitness brands, real revenue, doubled.",
-  // PLACEHOLDER — Cam supplies the 3 real case studies. Numbers are stand-ins.
-  placeholderNote: "Placeholder figures. Real case study numbers get dropped in here.",
+  // PLACEHOLDER — Cam supplies the 3 real case studies. Numbers + photos are stand-ins.
+  placeholderNote: "Placeholder figures. Real case study numbers and photos get dropped in here.",
+  // To add a photo: drop the file in public/results/ and set image to its path,
+  // e.g. image: "/results/strength-coach.jpg". Leave empty for a clean placeholder slot.
   cases: [
     {
       niche: "Online strength coach",
+      image: "",
       from: "$8K / mo",
       to: "$19K / mo",
       timeframe: "54 days",
@@ -49,6 +53,7 @@ export const results = {
     },
     {
       niche: "Nutrition influencer",
+      image: "",
       from: "$14K / mo",
       to: "$31K / mo",
       timeframe: "60 days",
@@ -56,6 +61,7 @@ export const results = {
     },
     {
       niche: "Hybrid training brand",
+      image: "",
       from: "$22K / mo",
       to: "$48K / mo",
       timeframe: "49 days",
@@ -66,13 +72,15 @@ export const results = {
 };
 
 export const oneLiner = {
+  // Repointed to "who it's for" so it complements the hero (which now owns the
+  // positioning line) instead of duplicating it. No revenue figures, per Cam.
   statement:
-    "The only done-for-you acquisition system built {accent:exclusively} for fitness coaches and influencers.",
+    "Made for fitness coaches and influencers with a proven offer, a real audience, and a backend that {accent:leaks}.",
   sub: "Double your revenue in 60 days or you don't pay.",
   cta: "Apply Here",
   // Honest trust strip. No partner badges we do not hold. Confirm with Cam.
   trust: [
-    "Built for coaches and influencers doing $2.5K to $50K+ per month",
+    "Built for coaches and influencers with a proven offer and a real audience",
     "Founder-led by a fitness model who knows the space",
     "Done for you across every channel",
   ],
