@@ -42,9 +42,9 @@ export function Nav() {
             <img
               src="/logo-lockup.png"
               alt="AthleteOS"
-              width={278}
-              height={30}
-              className="h-7 w-auto object-contain sm:h-8"
+              width={121}
+              height={36}
+              className="h-8 w-auto object-contain sm:h-9"
             />
           </a>
 

@@ -1,8 +1,9 @@
 @import "tailwindcss";
 
 /* ==========================================================================
-   AthleteOS design tokens.
-   Light theme, warm-tinted neutrals, single energetic coral-red accent.
+   AthleteOS design tokens (Brand Guidelines v1, Monday).
+   Monochrome only: warm chalk neutrals + cool slate. No coral, no bright
+   accents. The "accent" is dark slate, not a color.
    Colors in OKLCH. Fonts are wired from next/font in layout.tsx.
    ========================================================================== */
 
@@ -17,20 +18,20 @@
   --color-line: oklch(0.85 0.012 82);
   --color-line-soft: oklch(0.9 0.01 82);
 
-  /* Royal Blue accent (Brand Guidelines v2 primary accent) on the chalk theme. */
-  --color-accent: #003e91; /* Royal Blue, primary accent */
-  --color-accent-strong: #002063; /* Deep Blue, hover / emphasis */
-  --color-accent-tint: #e5ecfa; /* light royal-blue wash for pills + eyebrow */
-  --color-on-accent: #ffffff; /* white text on blue */
+  /* Slate accent (Brand Guidelines v1). The accent is dark slate, not a color. */
+  --color-accent: oklch(0.24 0.01 265); /* Slate, primary accent / buttons */
+  --color-accent-strong: oklch(0.17 0.01 265); /* Slate strong, hover / emphasis */
+  --color-accent-tint: oklch(0.9 0.012 82); /* warm linen wash for pills + eyebrow */
+  --color-on-accent: oklch(0.965 0.008 83); /* cream text on slate */
 
   /* Deep slate surface for the guarantee band */
   --color-ink-deep: oklch(0.21 0.008 265);
   --color-ink-deep-2: oklch(0.155 0.008 265);
 
-  /* Fonts — single brand typeface, Montserrat (variable provided by next/font) */
-  --font-display: var(--f-sans), "Montserrat", system-ui, sans-serif;
-  --font-body: var(--f-sans), "Montserrat", system-ui, sans-serif;
-  --font-accent: var(--f-sans), "Montserrat", system-ui, sans-serif;
+  /* Fonts (variables provided by next/font in layout.tsx) */
+  --font-display: var(--f-display), "Archivo", system-ui, sans-serif;
+  --font-body: var(--f-body), "Hanken Grotesk", system-ui, sans-serif;
+  --font-accent: var(--f-accent), "Libre Caslon Text", Georgia, serif;
 
   /* Fluid type scale (>= 1.25 ratio, clamp on headings) */
   --text-display: clamp(2.75rem, 1.6rem + 5.2vw, 5.5rem);
@@ -69,7 +70,7 @@
 
   h1, h2, h3, h4 {
     font-family: var(--font-display);
-    font-weight: 700; /* Montserrat 700 headings per brand spec */
+    font-weight: 700; /* Archivo, wide + heavy per brand spec */
     letter-spacing: -0.02em;
     line-height: 1.05;
     text-wrap: balance;
