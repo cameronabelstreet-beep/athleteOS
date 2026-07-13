@@ -215,14 +215,13 @@ export const testimonials = {
 export const comparison = {
   label: "Your options",
   heading: "What are your {accent:other} options?",
-  sub: "Faster results, less risk, and built only for fitness.",
   columns: ["AthleteOS", "Marketing agency", "Doing it yourself"],
   rows: [
     { label: "Built only for fitness coaches and influencers", values: ["yes", "no", "no"] },
     { label: "Done for you across ads, organic, referrals, and workflows", values: ["yes", "partial", "no"] },
     { label: "Revenue guarantee", values: ["Double in 60 days or you don't pay", "None", "None"] },
     { label: "Upfront risk", values: ["No upfront payment", "Upfront retainer", "Your time and money"] },
-    { label: "Time to results", values: ["Fast, done for you", "Slow onboarding", "Trial and error"] },
+    { label: "Time to results", values: ["Up to 60 days, done for you", "Slow onboarding", "Trial and error"] },
   ],
   cta: "Apply Here",
 };

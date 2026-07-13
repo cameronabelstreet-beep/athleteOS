@@ -2,7 +2,6 @@ import { comparison } from "@/lib/content";
 import {
   AccentText,
   CheckIcon,
-  CTAButton,
   Container,
   Eyebrow,
 } from "@/components/primitives";
@@ -48,7 +47,6 @@ export function Comparison() {
           <h2 className="mt-4 text-h2">
             <AccentText text={comparison.heading} />
           </h2>
-          <p className="mt-4 text-lead text-ink-soft">{comparison.sub}</p>
         </div>
 
         <div className="mt-12 overflow-x-auto">
@@ -59,9 +57,7 @@ export function Comparison() {
                 {cols.map((col, i) => (
                   <th
                     key={col}
-                    className={`px-5 pb-4 align-bottom ${
-                      i === 0 ? "" : ""
-                    }`}
+                    className="px-5 pb-4 text-center align-bottom"
                   >
                     <span
                       className={`inline-block rounded-t-xl px-4 py-2 text-base font-bold tracking-tight ${
@@ -104,10 +100,6 @@ export function Comparison() {
               ))}
             </tbody>
           </table>
-        </div>
-
-        <div className="mt-10">
-          <CTAButton size="lg">{comparison.cta}</CTAButton>
         </div>
       </Container>
     </section>

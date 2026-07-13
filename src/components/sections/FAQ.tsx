@@ -4,7 +4,6 @@ import { useState } from "react";
 import { faq } from "@/lib/content";
 import {
   AccentText,
-  CTAButton,
   Container,
   Eyebrow,
 } from "@/components/primitives";
@@ -21,9 +20,6 @@ export function FAQ() {
             <h2 className="mt-4 text-h2">
               <AccentText text={faq.heading} />
             </h2>
-            <div className="mt-8 hidden lg:block">
-              <CTAButton size="lg">{faq.cta}</CTAButton>
-            </div>
           </div>
 
           <div className="lg:col-span-8">
@@ -72,12 +68,6 @@ export function FAQ() {
                 );
               })}
             </ul>
-
-            <div className="mt-8 lg:hidden">
-              <CTAButton size="lg" className="w-full">
-                {faq.cta}
-              </CTAButton>
-            </div>
           </div>
         </div>
       </Container>
