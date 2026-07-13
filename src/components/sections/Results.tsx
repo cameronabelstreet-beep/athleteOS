@@ -9,7 +9,7 @@ import {
 
 export function Results() {
   return (
-    <section id="results" className="pb-20 pt-2 sm:pb-28">
+    <section id="results" className="pb-20 pt-16 sm:pb-28 sm:pt-24">
       <Container>
         {/* Cards lead, sitting as a proof band directly under the hero. */}
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
