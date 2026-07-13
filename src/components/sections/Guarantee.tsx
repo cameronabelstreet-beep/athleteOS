@@ -4,13 +4,14 @@ import { CTAButton, Container } from "@/components/primitives";
 export function Guarantee() {
   return (
     <section className="relative overflow-hidden bg-ink-deep py-24 text-[oklch(0.95_0.01_60)] sm:py-32">
-      {/* faint accent glow on the dark band */}
+      {/* navy glow on the dark band — brand spark of color, stronger here so it
+          reads against the deep slate */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 -z-0 opacity-70"
+        className="pointer-events-none absolute inset-0 -z-0 opacity-80"
         style={{
           background:
-            "radial-gradient(60rem 30rem at 50% -20%, oklch(0.5 0.02 265 / 0.5), transparent)",
+            "radial-gradient(60rem 30rem at 50% -20%, color-mix(in oklab, var(--color-glow) 60%, transparent), transparent)",
         }}
       />
       <Container className="relative">

@@ -12,7 +12,7 @@ export function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="bg-surface py-20 sm:py-28">
+    <section id="faq" className="glow-top bg-surface py-20 sm:py-28">
       <Container>
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-4">

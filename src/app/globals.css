@@ -159,6 +159,27 @@
   );
 }
 
+/* Section-level variant: a wide, soft navy glow bleeding from the top edge of a
+   full-width section (hero, band tops). Softer than the card glow. */
+.glow-top {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.glow-top::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background: radial-gradient(
+    62% 42% at 50% 0%,
+    color-mix(in oklab, var(--color-glow) 15%, transparent),
+    transparent 72%
+  );
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

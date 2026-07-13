@@ -13,6 +13,14 @@ export function Hero() {
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute -top-40 right-[-10%] h-[38rem] w-[38rem] rounded-full bg-[radial-gradient(closest-side,oklch(0.9_0.01_265),transparent)] opacity-70" />
         <div className="absolute -top-24 left-[-15%] h-[30rem] w-[30rem] rounded-full bg-[radial-gradient(closest-side,oklch(0.94_0.012_82),transparent)]" />
+        {/* navy top glow — the brand's one spark of color, kept soft */}
+        <div
+          className="absolute -top-40 left-1/2 h-[40rem] w-[70rem] -translate-x-1/2"
+          style={{
+            background:
+              "radial-gradient(closest-side, color-mix(in oklab, var(--color-glow) 15%, transparent), transparent)",
+          }}
+        />
         <div
           className="absolute inset-0 opacity-[0.35]"
           style={{
