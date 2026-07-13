@@ -9,9 +9,24 @@ import {
 
 export function Results() {
   return (
-    <section id="results" className="pb-20 pt-16 sm:pb-28 sm:pt-24">
+    <section
+      id="results"
+      className="relative overflow-hidden pb-20 pt-24 sm:pb-28 sm:pt-32"
+    >
+      {/* Soft navy glow blooming behind and around the cards (not on the cards
+          themselves — they sit opaque on top, so the color shows in the gaps
+          and margins around them). */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
+        <div
+          className="absolute left-1/2 top-1/2 h-[46rem] w-[85rem] max-w-none -translate-x-1/2 -translate-y-1/2"
+          style={{
+            background:
+              "radial-gradient(closest-side, color-mix(in oklab, var(--color-glow) 18%, transparent), transparent)",
+          }}
+        />
+      </div>
       <Container>
-        {/* Cards lead, sitting as a proof band directly under the hero. */}
+        {/* Cards lead as a proof band. */}
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {results.cases.map((c, i) => (
             <article

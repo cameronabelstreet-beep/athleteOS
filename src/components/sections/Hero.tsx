@@ -8,17 +8,20 @@ import {
 
 export function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden pt-28 sm:pt-36">
+    <section
+      id="top"
+      className="relative flex min-h-[88vh] flex-col justify-center overflow-hidden pt-24 sm:pt-28"
+    >
       {/* soft warm glow + faint dotted texture, kept subtle for the light theme */}
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute -top-40 right-[-10%] h-[38rem] w-[38rem] rounded-full bg-[radial-gradient(closest-side,oklch(0.9_0.01_265),transparent)] opacity-70" />
         <div className="absolute -top-24 left-[-15%] h-[30rem] w-[30rem] rounded-full bg-[radial-gradient(closest-side,oklch(0.94_0.012_82),transparent)]" />
-        {/* navy top glow — the brand's one spark of color, kept soft */}
+        {/* navy top glow — the brand's one spark of color */}
         <div
-          className="absolute -top-40 left-1/2 h-[40rem] w-[70rem] -translate-x-1/2"
+          className="absolute -top-40 left-1/2 h-[48rem] w-[82rem] -translate-x-1/2"
           style={{
             background:
-              "radial-gradient(closest-side, color-mix(in oklab, var(--color-glow) 15%, transparent), transparent)",
+              "radial-gradient(closest-side, color-mix(in oklab, var(--color-glow) 28%, transparent), transparent)",
           }}
         />
         <div
@@ -35,7 +38,7 @@ export function Hero() {
         />
       </div>
 
-      <Container className="relative pb-10 sm:pb-14">
+      <Container className="relative">
         {/* Centered hero. Headline sized down so the long positioning line
             reads at a controlled scale, then the Results band tucks under it. */}
         <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
