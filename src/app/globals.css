@@ -28,6 +28,10 @@
   --color-ink-deep: oklch(0.21 0.008 265);
   --color-ink-deep-2: oklch(0.155 0.008 265);
 
+  /* Dark navy — the one permitted spark of color, used only as a soft corner
+     glow on cards for premium depth. Kept deep + low-chroma to stay premium. */
+  --color-glow: oklch(0.42 0.13 258);
+
   /* Fonts (variables provided by next/font in layout.tsx) */
   --font-display: var(--f-display), "Archivo", system-ui, sans-serif;
   --font-body: var(--f-body), "Hanken Grotesk", system-ui, sans-serif;
@@ -122,6 +126,37 @@
 /* Constrained reading measure for body copy */
 .measure {
   max-width: 62ch;
+}
+
+/* Soft navy corner glow for premium depth on cards. Paints above the card's
+   own surface color but behind its content (z-index -1 inside an isolated
+   stacking context), and clips to the card's rounded corners. */
+.glow {
+  position: relative;
+  isolation: isolate;
+}
+
+.glow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    80% 80% at 100% 0%,
+    color-mix(in oklab, var(--color-glow) 22%, transparent),
+    transparent 62%
+  );
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Opposite corner, for visual rhythm across a grid or alternating sections. */
+.glow-bl::before {
+  background: radial-gradient(
+    80% 80% at 0% 100%,
+    color-mix(in oklab, var(--color-glow) 22%, transparent),
+    transparent 62%
+  );
 }
 
 @media (prefers-reduced-motion: reduce) {

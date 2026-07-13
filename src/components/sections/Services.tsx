@@ -23,7 +23,9 @@ export function Services() {
           {services.glance.map((g, i) => (
             <div
               key={i}
-              className="rounded-2xl border border-line bg-surface p-6 transition-transform duration-200 hover:-translate-y-1"
+              className={`glow${
+                i % 2 === 1 ? " glow-bl" : ""
+              } rounded-2xl border border-line bg-surface p-6 transition-transform duration-200 hover:-translate-y-1`}
             >
               <div className="flex items-center gap-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-accent" />
@@ -81,7 +83,7 @@ export function Services() {
         </ol>
 
         {/* Results-rule closer */}
-        <div className="mt-12 flex flex-col gap-6 rounded-2xl border border-line bg-surface p-8 sm:flex-row sm:items-center sm:justify-between sm:p-10">
+        <div className="glow mt-12 flex flex-col gap-6 rounded-2xl border border-line bg-surface p-8 sm:flex-row sm:items-center sm:justify-between sm:p-10">
           <p className="max-w-2xl text-h3 font-semibold leading-snug text-ink">
             {services.summary}
           </p>

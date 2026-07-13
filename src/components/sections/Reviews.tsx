@@ -23,7 +23,7 @@ export function Reviews() {
   return (
     <section className="bg-surface py-20 sm:py-28">
       <Container>
-        <div className="grid gap-10 rounded-3xl border border-line bg-bg p-8 sm:p-10 lg:grid-cols-2 lg:items-center lg:gap-16">
+        <div className="glow grid gap-10 rounded-3xl border border-line bg-bg p-8 sm:p-10 lg:grid-cols-2 lg:items-center lg:gap-16">
           <div>
             <Eyebrow>{reviews.label}</Eyebrow>
             <h2 className="mt-4 text-h2">

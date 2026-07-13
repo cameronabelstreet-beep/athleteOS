@@ -39,7 +39,7 @@ export function Testimonials() {
                 className="w-full shrink-0 px-1"
                 aria-hidden={i !== index}
               >
-                <div className="rounded-3xl border border-line bg-surface p-8 sm:p-12">
+                <div className="glow rounded-3xl border border-line bg-surface p-8 sm:p-12">
                   <blockquote
                     className="max-w-3xl text-h3 font-medium leading-snug text-ink"
                   >
