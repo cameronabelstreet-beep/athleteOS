@@ -1,6 +1,7 @@
 import { Nav } from "@/components/Nav";
 import { Hero } from "@/components/sections/Hero";
 import { Results } from "@/components/sections/Results";
+import { ResultsParallax } from "@/components/sections/ResultsParallax";
 import { OneLiner } from "@/components/sections/OneLiner";
 import { PainBlock } from "@/components/sections/PainBlock";
 import { Services } from "@/components/sections/Services";
@@ -21,6 +22,7 @@ export default function Home() {
       <main>
         <Hero />
         <Results />
+        <ResultsParallax />
         <OneLiner />
         <PainBlock />
         <Services />

@@ -101,7 +101,7 @@ export function CTAButton({
     primary:
       "bg-accent text-on-accent shadow-[0_1px_0_rgba(0,0,0,0.04),0_10px_28px_-14px_oklch(0.24_0.01_265/0.55)] hover:bg-accent-strong",
     secondary:
-      "bg-ink text-on-accent hover:bg-[oklch(0.3_0.02_55)]",
+      "bg-[oklch(0.24_0.01_265)] text-on-accent hover:bg-[oklch(0.17_0.01_265)]",
     ghost:
       "border border-line bg-transparent text-ink hover:border-ink/30 hover:bg-surface",
   };

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { nav } from "@/lib/content";
-import { CTAButton, Wordmark, applyHref } from "@/components/primitives";
+import { CTAButton, applyHref } from "@/components/primitives";
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -28,25 +28,24 @@ export function Nav() {
       <header
         className={`fixed inset-x-0 top-0 z-50 border-b transition-[background-color,border-color,backdrop-filter] duration-300 ${
           scrolled
-            ? "border-white/10 bg-[#19192e]/90 backdrop-blur-md"
-            : "border-white/5 bg-[#19192e]"
+            ? "border-line bg-bg/85 backdrop-blur-md"
+            : "border-transparent bg-bg"
         }`}
       >
         <nav className="mx-auto flex h-16 w-full max-w-[76rem] items-center justify-between px-5 sm:px-8">
           <a
             href="#top"
             aria-label="AthleteOS home"
-            className="flex shrink-0 items-center gap-2.5"
+            className="flex shrink-0 items-center"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/logo-mark.png"
+              src="/logo-lockup.png"
               alt="AthleteOS"
-              width={36}
-              height={36}
-              className="h-9 w-9 object-contain"
+              width={278}
+              height={30}
+              className="h-7 w-auto object-contain sm:h-8"
             />
-            <Wordmark className="text-white" osClassName="text-[#4d8ef0]" />
           </a>
 
           <div className="hidden items-center gap-8 md:flex">
@@ -54,7 +53,7 @@ export function Nav() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-white/70 transition-colors hover:text-white"
+                className="text-sm font-medium tracking-tight text-ink-soft transition-colors hover:text-ink"
               >
                 {link.label}
               </a>
@@ -62,7 +61,9 @@ export function Nav() {
           </div>
 
           <div className="hidden md:block">
-            <CTAButton size="md">{nav.cta}</CTAButton>
+            <CTAButton variant="secondary" size="md">
+              {nav.cta}
+            </CTAButton>
           </div>
 
           <button
@@ -70,7 +71,7 @@ export function Nav() {
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white md:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-line bg-surface text-ink md:hidden"
           >
             <span className="relative block h-3.5 w-4.5">
               <span
@@ -124,6 +125,7 @@ export function Nav() {
             ))}
             <div className="p-2 pt-3">
               <CTAButton
+                variant="secondary"
                 size="lg"
                 className="w-full"
                 href={applyHref}
@@ -137,7 +139,7 @@ export function Nav() {
 
       {/* Persistent mobile apply bar */}
       <div className="fixed inset-x-0 bottom-0 z-30 border-t border-line bg-bg/90 p-3 backdrop-blur-md md:hidden">
-        <CTAButton size="lg" className="w-full">
+        <CTAButton variant="secondary" size="lg" className="w-full">
           {nav.cta}
         </CTAButton>
       </div>
