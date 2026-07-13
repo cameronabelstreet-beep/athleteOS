@@ -8,7 +8,7 @@ import {
 
 export function OneLiner() {
   return (
-    <section className="border-y border-line bg-surface py-20 sm:py-28">
+    <section className="bg-surface py-20 sm:py-28">
       <Container>
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-h1">

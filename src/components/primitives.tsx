@@ -174,13 +174,20 @@ export function LogoMark({ className = "" }: { className?: string }) {
   );
 }
 
-/** Small brand wordmark used in the nav and footer. */
-export function Wordmark({ className = "" }: { className?: string }) {
+/** Small brand wordmark used in the nav and footer. osClassName controls the
+ *  "OS" color so it can stay legible on light or dark surfaces. */
+export function Wordmark({
+  className = "",
+  osClassName = "text-accent",
+}: {
+  className?: string;
+  osClassName?: string;
+}) {
   return (
     <span
       className={`font-[family-name:var(--font-display)] text-lg font-black tracking-[-0.04em] ${className}`}
     >
-      Athlete<span className="text-accent">OS</span>
+      Athlete<span className={osClassName}>OS</span>
     </span>
   );
 }

@@ -21,7 +21,7 @@ function Stars({ value = 5 }: { value?: number }) {
 export function Reviews() {
   const max = Math.max(...reviews.breakdown.map((b) => b.count), 1);
   return (
-    <section className="border-t border-line bg-surface py-20 sm:py-28">
+    <section className="bg-surface py-20 sm:py-28">
       <Container>
         <div className="grid gap-10 rounded-3xl border border-line bg-bg p-8 sm:p-10 lg:grid-cols-2 lg:items-center lg:gap-16">
           <div>

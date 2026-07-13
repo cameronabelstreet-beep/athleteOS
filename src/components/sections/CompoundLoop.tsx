@@ -8,7 +8,7 @@ import {
 
 export function CompoundLoop() {
   return (
-    <section className="border-y border-line bg-surface py-20 sm:py-28">
+    <section className="bg-surface py-20 sm:py-28">
       <Container>
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
           <div>
