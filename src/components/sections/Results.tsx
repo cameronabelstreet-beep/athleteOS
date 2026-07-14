@@ -5,6 +5,7 @@ import {
   Container,
   Eyebrow,
 } from "@/components/primitives";
+import { Glow } from "@/components/Glow";
 
 export function Results() {
   return (
@@ -17,15 +18,11 @@ export function Results() {
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {results.cases.map((c, i) => (
             <div key={i} className="relative isolate">
-              {/* Per-card navy glow, wider than the card so it pokes out the
-                  left and right edges. The card sits opaque on top. */}
-              <div
-                aria-hidden
-                className="pointer-events-none absolute -inset-x-12 inset-y-4 -z-10"
-                style={{
-                  background:
-                    "radial-gradient(closest-side, color-mix(in oklab, var(--color-glow) 32%, transparent), transparent)",
-                }}
+              {/* Navy glow hugging the whole card as a rounded rectangle, so it
+                  halos the border on every side. The card sits opaque on top. */}
+              <Glow
+                className="-inset-2 rounded-[1.4rem] blur-xl"
+                strength={45}
               />
               <article
                 className="group flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-surface transition-colors hover:border-ink/15"

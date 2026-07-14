@@ -6,10 +6,13 @@ import {
   Eyebrow,
 } from "@/components/primitives";
 import { Reveal } from "@/components/Reveal";
+import { Glow } from "@/components/Glow";
 
 export function CompoundLoop() {
   return (
-    <section className="bg-surface py-20 sm:py-28">
+    <section className="relative overflow-hidden bg-surface py-20 sm:py-28">
+      {/* Ambient navy glow in the top-left of the section. */}
+      <Glow className="-left-24 -top-24 h-[26rem] w-[26rem] rounded-full blur-3xl" strength={40} />
       <Container>
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
           <Reveal>
@@ -36,10 +39,12 @@ export function CompoundLoop() {
           </Reveal>
 
           {/* Flow / loop visual */}
-          <Reveal
-            className="rounded-3xl border border-line bg-bg p-5 sm:p-6"
-            delay={0.15}
-          >
+          <div className="relative">
+            <Glow className="-inset-5 rounded-[2rem] blur-2xl" strength={40} />
+            <Reveal
+              className="rounded-3xl border border-line bg-bg p-5 sm:p-6"
+              delay={0.15}
+            >
             <div className="flex flex-col">
               {compound.loop.map((node, i) => (
                 <div key={node.step}>
@@ -92,7 +97,8 @@ export function CompoundLoop() {
                 {compound.loopNote}
               </p>
             </div>
-          </Reveal>
+            </Reveal>
+          </div>
         </div>
       </Container>
     </section>

@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import { painBlock } from "@/lib/content";
 import { AccentText, Container } from "@/components/primitives";
+import { Glow } from "@/components/Glow";
 
 // One icon per pain, in order.
 const painIcons: LucideIcon[] = [
@@ -156,6 +157,8 @@ export function PainBlock() {
             {...reveal({ opacity: 0, scale: 0.95 })}
           >
             <div className="relative mx-auto w-full max-w-xs">
+              {/* Navy glow behind the photo. */}
+              <Glow className="-inset-6 rounded-[2rem] blur-2xl" strength={42} />
               <div className="relative aspect-[3/4] overflow-hidden rounded-2xl border border-line bg-gradient-to-br from-surface-2 to-accent-tint">
                 <span className="absolute inset-0 flex items-center justify-center text-xs font-medium uppercase tracking-wider text-muted">
                   Photo

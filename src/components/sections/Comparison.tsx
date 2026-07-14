@@ -90,9 +90,15 @@ export function Comparison() {
                   {row.values.map((v, ci) => (
                     <td
                       key={ci}
-                      className={`px-5 py-5 text-center ${
-                        ci === 0 ? "bg-accent-tint/60" : ""
-                      }`}
+                      className="px-5 py-5 text-center"
+                      style={
+                        ci === 0
+                          ? {
+                              backgroundColor:
+                                "color-mix(in oklab, var(--color-glow) 16%, transparent)",
+                            }
+                          : undefined
+                      }
                     >
                       <Cell value={v} highlight={ci === 0} />
                     </td>

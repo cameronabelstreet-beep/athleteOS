@@ -118,7 +118,7 @@ export const painBlock = {
     },
   ],
   bridge:
-    "Here is the truth. You are not doing it wrong. You have built the hard part. The gap is a leaky backend, and that is the one thing we fix, so you can double your revenue in 60 days.",
+    "We've been there, we've done that. With years of experience in scaling fitness and nutrition coaches and influencers to that next revenue level. Why not invest in yourself? We can guarantee your revenue doubled because we've done it before and we can do it again.",
 };
 
 export const services = {
