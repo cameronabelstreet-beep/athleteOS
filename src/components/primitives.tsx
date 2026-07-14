@@ -99,11 +99,15 @@ export function CTAButton({
     md: "px-6 py-3 text-[0.95rem]",
     lg: "px-8 py-4 text-base",
   };
+  // The first shadow layer is an off-charcoal "frame" that blooms from 0 to a
+  // 3px ring on hover (kept at the same layer count as the resting shadow so it
+  // animates smoothly instead of snapping). Slate, one notch lighter than the
+  // button, so it reads as a subtle bezel behind the pill.
   const variants = {
     primary:
-      "bg-accent text-on-accent shadow-[0_1px_0_rgba(0,0,0,0.04),0_10px_28px_-14px_oklch(0.24_0.01_265/0.55)] hover:bg-accent-strong hover:shadow-[0_2px_0_rgba(0,0,0,0.05),0_22px_44px_-16px_oklch(0.24_0.01_265/0.7)]",
+      "bg-accent text-on-accent shadow-[0_0_0_0_transparent,0_1px_0_rgba(0,0,0,0.04),0_10px_28px_-14px_oklch(0.24_0.01_265/0.55)] hover:bg-accent-strong hover:shadow-[0_0_0_3px_oklch(0.34_0.018_265),0_2px_0_rgba(0,0,0,0.05),0_22px_44px_-16px_oklch(0.24_0.01_265/0.7)]",
     secondary:
-      "bg-[oklch(0.24_0.01_265)] text-on-accent shadow-[0_10px_28px_-16px_oklch(0.24_0.01_265/0.5)] hover:bg-[oklch(0.17_0.01_265)] hover:shadow-[0_20px_42px_-16px_oklch(0.24_0.01_265/0.65)]",
+      "bg-[oklch(0.24_0.01_265)] text-on-accent shadow-[0_0_0_0_transparent,0_10px_28px_-16px_oklch(0.24_0.01_265/0.5)] hover:bg-[oklch(0.17_0.01_265)] hover:shadow-[0_0_0_3px_oklch(0.34_0.018_265),0_20px_42px_-16px_oklch(0.24_0.01_265/0.65)]",
     ghost:
       "border border-line bg-transparent text-ink hover:border-ink/30 hover:bg-surface hover:shadow-[0_16px_34px_-20px_oklch(0.24_0.01_265/0.4)]",
   };
