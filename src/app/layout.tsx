@@ -1,20 +1,15 @@
 import type { Metadata, Viewport } from "next";
-import { Archivo, Hanken_Grotesk, Libre_Caslon_Text } from "next/font/google";
+import { Libre_Caslon_Text } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-// Brand type system (Brand Guidelines v1, Monday):
-//  - Archivo: display + headlines, wide and heavy for the athletic, confident feel.
-//  - Hanken Grotesk: body + UI, clean and readable.
-//  - Libre Caslon Text (italic): a single emphasis word inside key headlines only.
-const display = Archivo({
-  subsets: ["latin"],
-  variable: "--f-display",
-  display: "swap",
-});
-
-const body = Hanken_Grotesk({
-  subsets: ["latin"],
-  variable: "--f-body",
+// Trial: TT Runs as the site sans (display + body), replacing Archivo/Hanken.
+// NOTE: only the Regular (400) weight ships in the trial file, so bold headings
+// are synthesized by the browser (faux bold). Libre Caslon italic stays as the
+// emphasis-word accent inside headlines.
+const runs = localFont({
+  src: "./fonts/TTRunsTrial-Regular.ttf",
+  variable: "--f-runs",
   display: "swap",
 });
 
@@ -50,10 +45,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang="en"
-      className={`${display.variable} ${body.variable} ${accent.variable}`}
-    >
+    <html lang="en" className={`${runs.variable} ${accent.variable}`}>
       <body>{children}</body>
     </html>
   );

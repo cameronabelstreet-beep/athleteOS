@@ -33,8 +33,9 @@
   --color-glow: oklch(0.42 0.13 258);
 
   /* Fonts (variables provided by next/font in layout.tsx) */
-  --font-display: var(--f-display), "Archivo", system-ui, sans-serif;
-  --font-body: var(--f-body), "Hanken Grotesk", system-ui, sans-serif;
+  /* Trial: TT Runs as the site sans. Revert display/body to Archivo/Hanken if dropped. */
+  --font-display: var(--f-runs), "TT Runs Trial", system-ui, sans-serif;
+  --font-body: var(--f-runs), "TT Runs Trial", system-ui, sans-serif;
   --font-accent: var(--f-accent), "Libre Caslon Text", Georgia, serif;
 
   /* Fluid type scale (>= 1.25 ratio, clamp on headings) */
