@@ -190,10 +190,10 @@ export function PainBlock() {
 
         {/* Bridge closer */}
         <motion.div
-          className="mt-16 rounded-2xl bg-accent-tint p-8 sm:p-10"
+          className="mt-16 flex justify-center text-center"
           {...reveal({ opacity: 0, y: 24 })}
         >
-          <p className="max-w-3xl text-h3 font-semibold leading-snug text-ink">
+          <p className="mx-auto max-w-3xl text-h3 font-semibold leading-snug text-ink">
             {painBlock.bridge}
           </p>
         </motion.div>
