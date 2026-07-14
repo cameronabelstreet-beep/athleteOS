@@ -12,26 +12,24 @@ export function Results() {
       id="results"
       className="relative overflow-hidden pb-20 pt-24 sm:pb-28 sm:pt-32"
     >
-      {/* Soft navy glow blooming behind and around the cards (not on the cards
-          themselves — they sit opaque on top, so the color shows in the gaps
-          and margins around them). */}
-      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-        <div
-          className="absolute left-1/2 top-1/2 h-[46rem] w-[85rem] max-w-none -translate-x-1/2 -translate-y-1/2"
-          style={{
-            background:
-              "radial-gradient(closest-side, color-mix(in oklab, var(--color-glow) 18%, transparent), transparent)",
-          }}
-        />
-      </div>
       <Container>
         {/* Cards lead as a proof band. */}
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {results.cases.map((c, i) => (
-            <article
-              key={i}
-              className="group flex flex-col overflow-hidden rounded-2xl border border-line bg-surface transition-colors hover:border-ink/15"
-            >
+            <div key={i} className="relative isolate">
+              {/* Per-card navy glow, wider than the card so it pokes out the
+                  left and right edges. The card sits opaque on top. */}
+              <div
+                aria-hidden
+                className="pointer-events-none absolute -inset-x-12 inset-y-4 -z-10"
+                style={{
+                  background:
+                    "radial-gradient(closest-side, color-mix(in oklab, var(--color-glow) 32%, transparent), transparent)",
+                }}
+              />
+              <article
+                className="group flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-surface transition-colors hover:border-ink/15"
+              >
               {/* Photo slot. On-brand gradient shows until a real photo is set
                   in content.ts (public/results/...). No fake image, no broken icon. */}
               <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-surface-2 to-accent-tint">
@@ -73,7 +71,8 @@ export function Results() {
                   &ldquo;{c.quote}&rdquo;
                 </p>
               </div>
-            </article>
+              </article>
+            </div>
           ))}
         </div>
 
