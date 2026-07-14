@@ -61,7 +61,9 @@ export function Hero() {
           <p className="mt-5 max-w-2xl text-lead text-ink-soft">{hero.sub}</p>
 
           <div className="mt-8 flex flex-col items-center gap-3">
-            <MagnetizeCTA>{hero.cta}</MagnetizeCTA>
+            <MagnetizeCTA count={55} spreadX={1500} spreadUp={520} spreadDown={200}>
+              {hero.cta}
+            </MagnetizeCTA>
             <span className="text-sm text-muted">{hero.microcopy}</span>
           </div>
         </div>
