@@ -37,13 +37,13 @@ const stepVariants: Variants = {
   active: { scale: 1, opacity: 1 },
 };
 
-// Placeholder panel positions per step, anchored to the right/lower area so
-// they sit clear of the top-left text column. Shown on md+ only.
+// Placeholder panel positions per step, laid out INSIDE the visual column
+// (its own grid cell), so they never crowd the text. Shown on md+ only.
 const panelLayouts: string[][] = [
-  ["right-[2%] top-[6%] w-[54%]", "right-[26%] bottom-[6%] w-[48%]"],
-  ["right-[4%] top-[8%] w-[52%]", "right-[30%] bottom-[9%] w-[44%]"],
-  ["right-[3%] top-[16%] w-[66%]"],
-  ["right-[3%] top-[16%] w-[66%]"],
+  ["right-0 top-[4%] w-[82%]", "left-0 bottom-[4%] w-[76%]"],
+  ["right-0 top-[6%] w-[78%]", "left-0 bottom-[6%] w-[72%]"],
+  ["left-1/2 top-1/2 w-[94%] -translate-x-1/2 -translate-y-1/2"],
+  ["left-1/2 top-1/2 w-[94%] -translate-x-1/2 -translate-y-1/2"],
 ];
 
 const panelAnim = {
@@ -53,23 +53,38 @@ const panelAnim = {
   transition: { type: "spring", stiffness: 300, damping: 26, mass: 0.5 },
 } as const;
 
+const panelClass =
+  "overflow-hidden rounded-xl border border-line bg-gradient-to-br from-surface-2 to-accent-tint shadow-[0_24px_50px_-24px_oklch(0.24_0.01_265/0.55)]";
+
+/** Desktop-only floating preview panels, contained within their column. */
 function StepVisual({ step }: { step: number }) {
   const layout = panelLayouts[step] ?? [];
   const labels = steps[step].panels;
   return (
-    <div className="pointer-events-none absolute inset-0 hidden md:block">
-      {layout.map((pos, i) => (
+    <div className="pointer-events-none relative hidden h-full min-h-[360px] md:block">
+      <AnimatePresence mode="wait">
         <motion.div
-          key={`${step}-${i}`}
-          className={`absolute aspect-[16/10] overflow-hidden rounded-xl border border-line bg-gradient-to-br from-surface-2 to-accent-tint shadow-[0_24px_50px_-24px_oklch(0.24_0.01_265/0.55)] ${pos}`}
-          {...panelAnim}
-          transition={{ ...panelAnim.transition, delay: i * 0.1 }}
+          key={step}
+          className="absolute inset-0"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.4 }}
         >
-          <span className="absolute inset-0 flex items-center justify-center text-xs font-medium uppercase tracking-wider text-muted">
-            {labels?.[i] ?? "Preview"}
-          </span>
+          {layout.map((pos, i) => (
+            <motion.div
+              key={`${step}-${i}`}
+              className={`absolute aspect-[16/10] ${panelClass} ${pos}`}
+              {...panelAnim}
+              transition={{ ...panelAnim.transition, delay: i * 0.1 }}
+            >
+              <span className="absolute inset-0 flex items-center justify-center text-xs font-medium uppercase tracking-wider text-muted">
+                {labels?.[i] ?? "Preview"}
+              </span>
+            </motion.div>
+          ))}
         </motion.div>
-      ))}
+      </AnimatePresence>
     </div>
   );
 }
@@ -77,11 +92,12 @@ function StepVisual({ step }: { step: number }) {
 function FeatureCard({ step }: { step: number }) {
   return (
     <div className="glow relative w-full overflow-hidden rounded-3xl border border-line bg-surface">
-      <div className="relative m-8 min-h-[340px] sm:m-10 md:min-h-[430px]">
+      <div className="grid items-center gap-10 p-8 sm:p-10 md:grid-cols-2 md:gap-14 md:p-14">
+        {/* Text column */}
         <AnimatePresence mode="wait">
           <motion.div
             key={step}
-            className="relative z-10 flex w-full flex-col gap-4 md:w-3/5"
+            className="flex w-full flex-col gap-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
@@ -104,28 +120,28 @@ function FeatureCard({ step }: { step: number }) {
               {steps[step].title}
             </motion.h3>
             <motion.p
-              className="measure text-[0.98rem] leading-relaxed text-ink-soft"
+              className="text-[0.98rem] leading-relaxed text-ink-soft"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.15, duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             >
               {steps[step].description}
             </motion.p>
+
+            {/* Mobile: a single stacked preview so the card isn't empty and
+                nothing overlaps the text. */}
+            <div
+              className={`mt-4 flex aspect-[16/10] w-full items-center justify-center md:hidden ${panelClass}`}
+            >
+              <span className="text-xs font-medium uppercase tracking-wider text-muted">
+                {steps[step].panels?.[0] ?? "Preview"}
+              </span>
+            </div>
           </motion.div>
         </AnimatePresence>
 
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={`visual-${step}`}
-            className="absolute inset-0"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.4 }}
-          >
-            <StepVisual step={step} />
-          </motion.div>
-        </AnimatePresence>
+        {/* Visual column (desktop) */}
+        <StepVisual step={step} />
       </div>
     </div>
   );
@@ -139,7 +155,7 @@ function StepsNav({
   onChange: (index: number) => void;
 }) {
   return (
-    <nav aria-label="Progress" className="mt-8 flex justify-center px-4">
+    <nav aria-label="Progress" className="mt-10 flex justify-center px-4">
       <ol className="flex flex-wrap items-center justify-center gap-2">
         {steps.map((step, i) => {
           const isCompleted = current > i;
@@ -186,7 +202,7 @@ function StepsNav({
 export function FeatureCarousel() {
   const { current, setStep } = useNumberCycler();
   return (
-    <div className="mx-auto w-full max-w-4xl">
+    <div className="mx-auto w-full max-w-5xl">
       <FeatureCard step={current} />
       <motion.div
         initial={{ opacity: 0, y: 10 }}
