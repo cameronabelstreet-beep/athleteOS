@@ -16,23 +16,31 @@ type Particle = { x: number; y: number };
 export function MagnetizeCTA({
   children,
   href,
-  count = 14,
+  count = 34,
+  spreadX = 1360,
+  spreadUp = 440,
+  spreadDown = 170,
 }: {
   children: ReactNode;
   href?: string;
   count?: number;
+  spreadX?: number;
+  spreadUp?: number;
+  spreadDown?: number;
 }) {
   const [particles, setParticles] = useState<Particle[]>([]);
   const [attracting, setAttracting] = useState(false);
 
   useEffect(() => {
+    // Scatter across the whole hero: wide on x, and biased upward on y (the
+    // button sits low in the hero) so particles reach up toward the headline.
     setParticles(
       Array.from({ length: count }, () => ({
-        x: Math.round(Math.random() * 260 - 130),
-        y: Math.round(Math.random() * 150 - 75),
+        x: Math.round(Math.random() * spreadX - spreadX / 2),
+        y: Math.round(Math.random() * (spreadUp + spreadDown) - spreadUp),
       })),
     );
-  }, [count]);
+  }, [count, spreadX, spreadUp, spreadDown]);
 
   return (
     <div
