@@ -2,7 +2,6 @@ import { results } from "@/lib/content";
 import {
   AccentText,
   ArrowIcon,
-  CTAButton,
   Container,
   Eyebrow,
 } from "@/components/primitives";
@@ -78,18 +77,15 @@ export function Results() {
           ))}
         </div>
 
-        {/* Context + CTA sit below the proof band. */}
-        <div className="mt-12 flex flex-col items-center gap-6 text-center md:flex-row md:items-end md:justify-between md:text-left">
-          <div className="max-w-xl">
-            <Eyebrow>{results.label}</Eyebrow>
-            <h2 className="mt-4 text-h2">
-              <AccentText text={results.heading} />
-            </h2>
-            <p className="mt-3 text-lead text-ink-soft">{results.sub}</p>
-          </div>
-          <CTAButton>{results.cta}</CTAButton>
+        {/* Context sits centered below the proof band, directly under the cards. */}
+        <div className="mx-auto mt-16 max-w-xl text-center">
+          <Eyebrow>{results.label}</Eyebrow>
+          <h2 className="mt-4 text-h2">
+            <AccentText text={results.heading} />
+          </h2>
+          <p className="mt-3 text-lead text-ink-soft">{results.sub}</p>
+          <p className="mt-4 text-sm text-muted">{results.placeholderNote}</p>
         </div>
-        <p className="mt-4 text-sm text-muted">{results.placeholderNote}</p>
       </Container>
     </section>
   );

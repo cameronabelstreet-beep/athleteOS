@@ -91,19 +91,21 @@ export function CTAButton({
   className = "",
   href = applyHref,
 }: CTAProps) {
+  // Hover lifts the button and deepens its shadow for a premium feel; a click
+  // presses it back to the baseline. Applied here so every CTA shares it.
   const base =
-    "group inline-flex items-center justify-center gap-2 rounded-full font-semibold tracking-tight transition-[background-color,color,transform,box-shadow] duration-200 active:translate-y-px";
+    "group inline-flex items-center justify-center gap-2 rounded-full font-semibold tracking-tight transition-[background-color,color,transform,box-shadow] duration-200 ease-out hover:-translate-y-0.5 active:translate-y-0";
   const sizes = {
     md: "px-6 py-3 text-[0.95rem]",
     lg: "px-8 py-4 text-base",
   };
   const variants = {
     primary:
-      "bg-accent text-on-accent shadow-[0_1px_0_rgba(0,0,0,0.04),0_10px_28px_-14px_oklch(0.24_0.01_265/0.55)] hover:bg-accent-strong",
+      "bg-accent text-on-accent shadow-[0_1px_0_rgba(0,0,0,0.04),0_10px_28px_-14px_oklch(0.24_0.01_265/0.55)] hover:bg-accent-strong hover:shadow-[0_2px_0_rgba(0,0,0,0.05),0_22px_44px_-16px_oklch(0.24_0.01_265/0.7)]",
     secondary:
-      "bg-[oklch(0.24_0.01_265)] text-on-accent hover:bg-[oklch(0.17_0.01_265)]",
+      "bg-[oklch(0.24_0.01_265)] text-on-accent shadow-[0_10px_28px_-16px_oklch(0.24_0.01_265/0.5)] hover:bg-[oklch(0.17_0.01_265)] hover:shadow-[0_20px_42px_-16px_oklch(0.24_0.01_265/0.65)]",
     ghost:
-      "border border-line bg-transparent text-ink hover:border-ink/30 hover:bg-surface",
+      "border border-line bg-transparent text-ink hover:border-ink/30 hover:bg-surface hover:shadow-[0_16px_34px_-20px_oklch(0.24_0.01_265/0.4)]",
   };
   return (
     <a
