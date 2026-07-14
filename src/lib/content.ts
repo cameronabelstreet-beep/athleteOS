@@ -125,6 +125,38 @@ export const services = {
   label: "What we do",
   heading: "You have built the audience. We turn it into {accent:revenue}.",
   sub: "You are already doing the hard part. We bring the guidance, the branding, and the system that patches your leaky lead funnel.",
+  // Feature carousel steps (Services section). Panel labels are placeholder
+  // previews until real product screenshots are dropped in.
+  steps: [
+    {
+      name: "Ads",
+      title: "Paid ads that bring buyers, not just clicks.",
+      description:
+        "We build and manage paid ads around your offer and your audience, so paid traffic finally returns buyers and scales the moment you want more.",
+      panels: ["Ad manager", "ROAS report"],
+    },
+    {
+      name: "Organic",
+      title: "Your content, turned into booked calls.",
+      description:
+        "We add the guidance and branding that turns your existing views into booked calls, so the audience you already built starts producing real revenue.",
+      panels: ["Content plan", "Booked call"],
+    },
+    {
+      name: "Referrals",
+      title: "Referrals that run on their own.",
+      description:
+        "We install a referral system that makes introductions automatic, so your cheapest acquisition channel finally works for you.",
+      panels: ["Referral flow"],
+    },
+    {
+      name: "Workflows",
+      title: "Follow up that never lets a lead go cold.",
+      description:
+        "We build the follow up, booking, and nurture workflows behind the scenes, so no lead slips through and more turn into paying clients.",
+      panels: ["Automation map"],
+    },
+  ],
   glance: [
     { name: "Ads", line: "Paid ads dialed to your fitness offer that bring buyers, not just clicks." },
     { name: "Organic", line: "Your existing content turned into a channel that books calls." },
