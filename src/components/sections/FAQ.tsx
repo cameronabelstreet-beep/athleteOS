@@ -7,6 +7,7 @@ import {
   Container,
   Eyebrow,
 } from "@/components/primitives";
+import { Reveal } from "@/components/Reveal";
 
 export function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
@@ -15,14 +16,14 @@ export function FAQ() {
     <section id="faq" className="glow-top bg-surface py-20 sm:py-28">
       <Container>
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
-          <div className="lg:col-span-4">
+          <Reveal className="lg:col-span-4">
             <Eyebrow>{faq.label}</Eyebrow>
             <h2 className="mt-4 text-h2">
               <AccentText text={faq.heading} />
             </h2>
-          </div>
+          </Reveal>
 
-          <div className="lg:col-span-8">
+          <Reveal className="lg:col-span-8" delay={0.15}>
             <ul className="border-t border-line">
               {faq.items.map((item, i) => {
                 const isOpen = open === i;
@@ -68,7 +69,7 @@ export function FAQ() {
                 );
               })}
             </ul>
-          </div>
+          </Reveal>
         </div>
       </Container>
     </section>

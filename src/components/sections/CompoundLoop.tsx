@@ -5,13 +5,14 @@ import {
   Container,
   Eyebrow,
 } from "@/components/primitives";
+import { Reveal } from "@/components/Reveal";
 
 export function CompoundLoop() {
   return (
     <section className="bg-surface py-20 sm:py-28">
       <Container>
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
-          <div>
+          <Reveal>
             <Eyebrow>{compound.label}</Eyebrow>
             <h2 className="mt-4 text-h2">
               <AccentText text={compound.heading} />
@@ -32,10 +33,13 @@ export function CompoundLoop() {
                 </li>
               ))}
             </ul>
-          </div>
+          </Reveal>
 
           {/* Flow / loop visual */}
-          <div className="rounded-3xl border border-line bg-bg p-5 sm:p-6">
+          <Reveal
+            className="rounded-3xl border border-line bg-bg p-5 sm:p-6"
+            delay={0.15}
+          >
             <div className="flex flex-col">
               {compound.loop.map((node, i) => (
                 <div key={node.step}>
@@ -88,7 +92,7 @@ export function CompoundLoop() {
                 {compound.loopNote}
               </p>
             </div>
-          </div>
+          </Reveal>
         </div>
       </Container>
     </section>

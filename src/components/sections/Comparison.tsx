@@ -5,6 +5,7 @@ import {
   Container,
   Eyebrow,
 } from "@/components/primitives";
+import { Reveal } from "@/components/Reveal";
 
 function Cell({ value, highlight }: { value: string; highlight: boolean }) {
   if (value === "yes") {
@@ -42,14 +43,14 @@ export function Comparison() {
   return (
     <section className="py-20 sm:py-28">
       <Container>
-        <div className="max-w-2xl">
+        <Reveal className="max-w-2xl">
           <Eyebrow>{comparison.label}</Eyebrow>
           <h2 className="mt-4 text-h2">
             <AccentText text={comparison.heading} />
           </h2>
-        </div>
+        </Reveal>
 
-        <div className="mt-12 overflow-x-auto">
+        <Reveal className="mt-12 overflow-x-auto" delay={0.15}>
           <table className="w-full min-w-[42rem] border-collapse text-left">
             <thead>
               <tr>
@@ -100,7 +101,7 @@ export function Comparison() {
               ))}
             </tbody>
           </table>
-        </div>
+        </Reveal>
       </Container>
     </section>
   );

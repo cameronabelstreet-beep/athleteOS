@@ -285,7 +285,7 @@ export const guarantee = {
 
 export const finalCta = {
   heading: "Ready to {accent:double} your revenue in 60 days?",
-  sub: "No upfront payment. You only pay once you see the results.",
+  sub: "No upfront payment. If we don't hit it, you don't pay for the work. The risk is ours, not yours.",
   pill: `Only ${siteConfig.spotsLeft} onboarding spots left this month`,
   cta: "Apply Here",
   microcopy: "Takes under 60 seconds.",
