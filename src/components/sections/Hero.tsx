@@ -10,7 +10,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-[88vh] flex-col justify-center overflow-hidden pt-24 sm:pt-28"
+      className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden pb-24 pt-24 sm:pt-28"
     >
       {/* soft warm glow + faint dotted texture, kept subtle for the light theme */}
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
@@ -35,6 +35,15 @@ export function Hero() {
               "linear-gradient(to bottom, black, transparent 55%)",
             WebkitMaskImage:
               "linear-gradient(to bottom, black, transparent 55%)",
+          }}
+        />
+        {/* Fade the whole wash into the page bg at the bottom so the hero
+            dissolves into the next section instead of ending on a hard line. */}
+        <div
+          className="absolute inset-x-0 bottom-0 h-64"
+          style={{
+            background:
+              "linear-gradient(to bottom, transparent, var(--color-bg))",
           }}
         />
       </div>
