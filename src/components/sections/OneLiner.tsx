@@ -21,9 +21,19 @@ export function OneLiner() {
               {/* Navy glow behind the photo. */}
               <Glow className="-inset-6 rounded-[2.5rem] blur-2xl" strength={42} />
               <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-line bg-gradient-to-br from-surface-2 to-accent-tint">
-                <span className="absolute inset-0 flex items-center justify-center text-xs font-medium uppercase tracking-wider text-muted">
-                  Photo
-                </span>
+                {oneLiner.image ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={oneLiner.image}
+                    alt="Fitness influencer filming content"
+                    loading="lazy"
+                    className="absolute inset-0 h-full w-full object-cover"
+                  />
+                ) : (
+                  <span className="absolute inset-0 flex items-center justify-center text-xs font-medium uppercase tracking-wider text-muted">
+                    Photo
+                  </span>
+                )}
               </div>
               {/* Offset navy frame accent behind the photo. */}
               <div

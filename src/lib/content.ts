@@ -78,6 +78,7 @@ export const oneLiner = {
     "Made for fitness coaches and influencers with a proven offer, a real audience, and a backend that {accent:leaks}.",
   sub: "Double your revenue in 60 days or you don't pay.",
   cta: "Apply Here",
+  image: "/oneliner/fitness-influencer.jpg",
   // Honest trust strip. No partner badges we do not hold. Confirm with Cam.
   trust: [
     "Built for coaches and influencers with a proven offer and a real audience",
@@ -134,6 +135,7 @@ export const services = {
       description:
         "We build and manage paid ads around your offer and your audience, so paid traffic finally returns buyers and scales the moment you want more.",
       panels: ["Ad manager", "ROAS report"],
+      images: ["/services/ads-manager.avif", "/services/ads-manager-2.avif"],
     },
     {
       name: "Organic",
@@ -141,6 +143,7 @@ export const services = {
       description:
         "We add the guidance and branding that turns your existing views into booked calls, so the audience you already built starts producing real revenue.",
       panels: ["Content plan", "Booked call"],
+      images: [] as string[],
     },
     {
       name: "Referrals",
@@ -148,6 +151,7 @@ export const services = {
       description:
         "We install a referral system that makes introductions automatic, so your cheapest acquisition channel finally works for you.",
       panels: ["Referral flow"],
+      images: [] as string[],
     },
     {
       name: "Workflows",
@@ -155,6 +159,7 @@ export const services = {
       description:
         "We build the follow up, booking, and nurture workflows behind the scenes, so no lead slips through and more turn into paying clients.",
       panels: ["Automation map"],
+      images: [] as string[],
     },
   ],
   glance: [

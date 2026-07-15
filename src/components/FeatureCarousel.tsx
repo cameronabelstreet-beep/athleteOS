@@ -60,6 +60,7 @@ const panelClass =
 function StepVisual({ step }: { step: number }) {
   const layout = panelLayouts[step] ?? [];
   const labels = steps[step].panels;
+  const images = steps[step].images;
   return (
     <div className="pointer-events-none relative hidden h-full min-h-[360px] md:block">
       <AnimatePresence mode="wait">
@@ -78,9 +79,18 @@ function StepVisual({ step }: { step: number }) {
               {...panelAnim}
               transition={{ ...panelAnim.transition, delay: i * 0.1 }}
             >
-              <span className="absolute inset-0 flex items-center justify-center text-xs font-medium uppercase tracking-wider text-muted">
-                {labels?.[i] ?? "Preview"}
-              </span>
+              {images?.[i] ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={images[i]}
+                  alt={labels?.[i] ?? "Preview"}
+                  className="absolute inset-0 h-full w-full object-cover object-top"
+                />
+              ) : (
+                <span className="absolute inset-0 flex items-center justify-center text-xs font-medium uppercase tracking-wider text-muted">
+                  {labels?.[i] ?? "Preview"}
+                </span>
+              )}
             </motion.div>
           ))}
         </motion.div>
@@ -131,11 +141,20 @@ function FeatureCard({ step }: { step: number }) {
             {/* Mobile: a single stacked preview so the card isn't empty and
                 nothing overlaps the text. */}
             <div
-              className={`mt-4 flex aspect-[16/10] w-full items-center justify-center md:hidden ${panelClass}`}
+              className={`relative mt-4 aspect-[16/10] w-full md:hidden ${panelClass}`}
             >
-              <span className="text-xs font-medium uppercase tracking-wider text-muted">
-                {steps[step].panels?.[0] ?? "Preview"}
-              </span>
+              {steps[step].images?.[0] ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={steps[step].images[0]}
+                  alt={steps[step].panels?.[0] ?? "Preview"}
+                  className="absolute inset-0 h-full w-full object-cover object-top"
+                />
+              ) : (
+                <span className="absolute inset-0 flex items-center justify-center text-xs font-medium uppercase tracking-wider text-muted">
+                  {steps[step].panels?.[0] ?? "Preview"}
+                </span>
+              )}
             </div>
           </motion.div>
         </AnimatePresence>
