@@ -175,9 +175,9 @@
   pointer-events: none;
   z-index: -1;
   background: radial-gradient(
-    62% 42% at 50% 0%,
-    color-mix(in oklab, var(--color-glow) 15%, transparent),
-    transparent 72%
+    78% 58% at 50% 0%,
+    color-mix(in oklab, var(--color-glow) 30%, transparent),
+    transparent 78%
   );
 }
 

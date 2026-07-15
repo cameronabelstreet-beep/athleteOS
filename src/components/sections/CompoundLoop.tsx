@@ -10,7 +10,7 @@ import { Glow } from "@/components/Glow";
 
 export function CompoundLoop() {
   return (
-    <section className="relative overflow-hidden bg-surface py-20 sm:py-28">
+    <section className="relative isolate overflow-hidden bg-surface py-20 sm:py-28">
       {/* Ambient navy glow in the top-left of the section. */}
       <Glow className="-left-24 -top-24 h-[26rem] w-[26rem] rounded-full blur-3xl" strength={40} />
       <Container>
@@ -39,8 +39,8 @@ export function CompoundLoop() {
           </Reveal>
 
           {/* Flow / loop visual */}
-          <div className="relative">
-            <Glow className="-inset-5 rounded-[2rem] blur-2xl" strength={40} />
+          <div className="relative isolate">
+            <Glow className="-inset-6 rounded-[2.4rem] blur-2xl" strength={55} />
             <Reveal
               className="rounded-3xl border border-line bg-bg p-5 sm:p-6"
               delay={0.15}

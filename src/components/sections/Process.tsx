@@ -5,6 +5,7 @@ import {
   Container,
   Eyebrow,
 } from "@/components/primitives";
+import { Reveal } from "@/components/Reveal";
 
 export function Process() {
   return (
@@ -19,18 +20,21 @@ export function Process() {
         </div>
 
         <ol className="mt-14 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
-          {process.steps.map((step) => (
-            <li key={step.no} className="border-t-2 border-ink pt-5">
-              <div className="flex items-center justify-between">
-                <span
-                  className="text-sm font-bold tabular-nums text-accent"
-                  style={{ fontFamily: "var(--font-display)" }}
-                >
-                  {step.no}
-                </span>
-              </div>
-              <h3 className="mt-6 text-h3 text-ink">{step.title}</h3>
-              <p className="mt-3 text-[0.95rem] text-ink-soft">{step.line}</p>
+          {process.steps.map((step, i) => (
+            <li key={step.no}>
+              {/* Each box appears on scroll, staggered left to right. */}
+              <Reveal className="border-t-2 border-ink pt-5" delay={i * 0.15}>
+                <div className="flex items-center justify-between">
+                  <span
+                    className="text-sm font-bold tabular-nums text-accent"
+                    style={{ fontFamily: "var(--font-display)" }}
+                  >
+                    {step.no}
+                  </span>
+                </div>
+                <h3 className="mt-6 text-h3 text-ink">{step.title}</h3>
+                <p className="mt-3 text-[0.95rem] text-ink-soft">{step.line}</p>
+              </Reveal>
             </li>
           ))}
         </ol>

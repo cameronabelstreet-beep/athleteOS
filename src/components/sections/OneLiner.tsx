@@ -10,14 +10,14 @@ import { Glow } from "@/components/Glow";
 
 export function OneLiner() {
   return (
-    <section className="relative overflow-hidden bg-surface py-20 sm:py-28">
+    <section className="relative isolate overflow-hidden bg-surface py-20 sm:py-28">
       {/* Ambient navy glow in the top-right of the section. */}
       <Glow className="-right-24 -top-24 h-[26rem] w-[26rem] rounded-full blur-3xl" strength={40} />
       <Container>
         <Reveal>
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
             {/* Placeholder photo (left) */}
-            <div className="relative mx-auto w-full max-w-sm lg:mx-0">
+            <div className="relative isolate mx-auto w-full max-w-sm lg:mx-0">
               {/* Navy glow behind the photo. */}
               <Glow className="-inset-6 rounded-[2.5rem] blur-2xl" strength={42} />
               <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-line bg-gradient-to-br from-surface-2 to-accent-tint">

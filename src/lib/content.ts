@@ -118,7 +118,7 @@ export const painBlock = {
     },
   ],
   bridge:
-    "We've been there, we've done that. With years of experience in scaling fitness and nutrition coaches and influencers to that next revenue level. Why not invest in yourself? We can guarantee your revenue doubled because we've done it before and we can do it again.",
+    "We've been there, we've done that. We can guarantee your revenue doubled because we've done it before and we can do it again.",
 };
 
 export const services = {
