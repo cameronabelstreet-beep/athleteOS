@@ -5,6 +5,7 @@ import {
   Container,
   UrgencyPill,
 } from "@/components/primitives";
+import { Reveal } from "@/components/Reveal";
 
 export function FinalCTA() {
   const hasForm = Boolean(siteConfig.typeformUrl);
@@ -12,15 +13,15 @@ export function FinalCTA() {
   return (
     <section id="apply" className="py-20 sm:py-28">
       <Container>
-        <div className="mx-auto max-w-2xl text-center">
+        <Reveal className="mx-auto max-w-2xl text-center">
           <UrgencyPill>{finalCta.pill}</UrgencyPill>
           <h2 className="mt-6 text-h1">
             <AccentText text={finalCta.heading} />
           </h2>
           <p className="mt-4 text-lead text-ink-soft">{finalCta.sub}</p>
-        </div>
+        </Reveal>
 
-        <div className="mx-auto mt-10 max-w-2xl">
+        <Reveal className="mx-auto mt-10 max-w-2xl" delay={0.15}>
           {hasForm ? (
             <div className="overflow-hidden rounded-3xl border border-line bg-surface">
               <iframe
@@ -54,7 +55,7 @@ export function FinalCTA() {
               <p className="mt-4 text-sm text-muted">{finalCta.microcopy}</p>
             </div>
           )}
-        </div>
+        </Reveal>
       </Container>
     </section>
   );

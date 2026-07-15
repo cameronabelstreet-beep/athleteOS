@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { testimonials } from "@/lib/content";
 import { AccentText, Container, Eyebrow } from "@/components/primitives";
+import { Reveal } from "@/components/Reveal";
 
 export function Testimonials() {
   const quotes = testimonials.quotes;
@@ -14,7 +15,7 @@ export function Testimonials() {
   return (
     <section className="py-20 sm:py-28">
       <Container>
-        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+        <Reveal className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div className="max-w-xl">
             <Eyebrow>{testimonials.label}</Eyebrow>
             <h2 className="mt-4 text-h2">
@@ -24,11 +25,11 @@ export function Testimonials() {
           <p className="text-sm text-muted md:max-w-[15rem] md:text-right">
             {testimonials.placeholderNote}
           </p>
-        </div>
+        </Reveal>
 
         {/* Slider. Motion is intentionally basic; the polished animation is a
             second pass. Controls + dots make it fully functional now. */}
-        <div className="mt-10 overflow-hidden">
+        <Reveal className="mt-10 overflow-hidden" delay={0.15}>
           <div
             className="flex transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
             style={{ transform: `translateX(-${index * 100}%)` }}
@@ -63,7 +64,7 @@ export function Testimonials() {
               </figure>
             ))}
           </div>
-        </div>
+        </Reveal>
 
         <div className="mt-6 flex items-center justify-between">
           <div className="flex gap-2">
