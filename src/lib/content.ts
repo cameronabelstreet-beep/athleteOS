@@ -137,6 +137,7 @@ export const services = {
         "We build and manage paid ads around your offer and your audience, so paid traffic finally returns buyers and scales the moment you want more.",
       panels: ["Ad manager", "ROAS report"],
       images: ["/services/ads-manager.avif", "/services/ads-manager-2.avif"],
+      mocks: [] as string[],
     },
     {
       name: "Organic",
@@ -145,6 +146,7 @@ export const services = {
         "We add the guidance and branding that turns your existing views into booked calls, so the audience you already built starts producing real revenue.",
       panels: ["Content plan", "Booked call"],
       images: [] as string[],
+      mocks: ["feed", "dm"],
     },
     {
       name: "Referrals",
@@ -153,6 +155,7 @@ export const services = {
         "We install a referral system that makes introductions automatic, so your cheapest acquisition channel finally works for you.",
       panels: ["Referral flow"],
       images: [] as string[],
+      mocks: [] as string[],
     },
     {
       name: "Workflows",
@@ -161,6 +164,7 @@ export const services = {
         "We build the follow up, booking, and nurture workflows behind the scenes, so no lead slips through and more turn into paying clients.",
       panels: ["Automation map"],
       images: [] as string[],
+      mocks: [] as string[],
     },
   ],
   glance: [

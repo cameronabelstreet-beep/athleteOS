@@ -9,6 +9,7 @@ import { useCallback, useEffect, useState } from "react";
 import { AnimatePresence, motion, type Variants } from "framer-motion";
 import { services } from "@/lib/content";
 import { CheckIcon } from "@/components/primitives";
+import { serviceMocks } from "@/components/ServiceMockups";
 
 const steps = services.steps;
 const TOTAL_STEPS = steps.length;
@@ -61,6 +62,7 @@ function StepVisual({ step }: { step: number }) {
   const layout = panelLayouts[step] ?? [];
   const labels = steps[step].panels;
   const images = steps[step].images;
+  const mocks = steps[step].mocks;
   return (
     <div className="pointer-events-none relative hidden h-full min-h-[360px] md:block">
       <AnimatePresence mode="wait">
@@ -72,27 +74,33 @@ function StepVisual({ step }: { step: number }) {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.4 }}
         >
-          {layout.map((pos, i) => (
-            <motion.div
-              key={`${step}-${i}`}
-              className={`absolute aspect-[16/10] ${panelClass} ${pos}`}
-              {...panelAnim}
-              transition={{ ...panelAnim.transition, delay: i * 0.1 }}
-            >
-              {images?.[i] ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  src={images[i]}
-                  alt={labels?.[i] ?? "Preview"}
-                  className="absolute inset-0 h-full w-full object-cover object-top"
-                />
-              ) : (
-                <span className="absolute inset-0 flex items-center justify-center text-xs font-medium uppercase tracking-wider text-muted">
-                  {labels?.[i] ?? "Preview"}
-                </span>
-              )}
-            </motion.div>
-          ))}
+          {layout.map((pos, i) => {
+            const img = images?.[i];
+            const MockComp = mocks?.[i] ? serviceMocks[mocks[i]] : null;
+            return (
+              <motion.div
+                key={`${step}-${i}`}
+                className={`absolute aspect-[16/10] ${panelClass} ${pos}`}
+                {...panelAnim}
+                transition={{ ...panelAnim.transition, delay: i * 0.1 }}
+              >
+                {img ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={img}
+                    alt={labels?.[i] ?? "Preview"}
+                    className="absolute inset-0 h-full w-full object-cover object-top"
+                  />
+                ) : MockComp ? (
+                  <MockComp />
+                ) : (
+                  <span className="absolute inset-0 flex items-center justify-center text-xs font-medium uppercase tracking-wider text-muted">
+                    {labels?.[i] ?? "Preview"}
+                  </span>
+                )}
+              </motion.div>
+            );
+          })}
         </motion.div>
       </AnimatePresence>
     </div>
@@ -100,6 +108,8 @@ function StepVisual({ step }: { step: number }) {
 }
 
 function FeatureCard({ step }: { step: number }) {
+  const mobileMockKey = steps[step].mocks?.[0];
+  const MobileMock = mobileMockKey ? serviceMocks[mobileMockKey] : null;
   return (
     <div className="glow relative w-full overflow-hidden rounded-3xl border border-line bg-surface">
       <div className="grid items-center gap-10 p-8 sm:p-10 md:grid-cols-2 md:gap-14 md:p-14">
@@ -150,6 +160,8 @@ function FeatureCard({ step }: { step: number }) {
                   alt={steps[step].panels?.[0] ?? "Preview"}
                   className="absolute inset-0 h-full w-full object-cover object-top"
                 />
+              ) : MobileMock ? (
+                <MobileMock />
               ) : (
                 <span className="absolute inset-0 flex items-center justify-center text-xs font-medium uppercase tracking-wider text-muted">
                   {steps[step].panels?.[0] ?? "Preview"}
