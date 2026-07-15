@@ -92,6 +92,7 @@ export const painBlock = {
   heading: "You are doing the hard part {accent:right}. Something still isn't clicking.",
   intro:
     "If a few of these hit home, the problem is not your effort. It is the system behind your offer.",
+  image: "/pain/pain-points.jpg",
   pains: [
     {
       title: "Your audience is big, but the sales don't match it.",
