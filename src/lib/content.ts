@@ -155,7 +155,7 @@ export const services = {
         "We install a referral system that makes introductions automatic, so your cheapest acquisition channel finally works for you.",
       panels: ["Referral flow"],
       images: [] as string[],
-      mocks: [] as string[],
+      mocks: ["referral"],
     },
     {
       name: "Workflows",
@@ -164,7 +164,7 @@ export const services = {
         "We build the follow up, booking, and nurture workflows behind the scenes, so no lead slips through and more turn into paying clients.",
       panels: ["Automation map"],
       images: [] as string[],
-      mocks: [] as string[],
+      mocks: ["automation"],
     },
   ],
   glance: [
