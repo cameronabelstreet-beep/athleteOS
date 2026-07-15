@@ -45,7 +45,7 @@ export const results = {
   cases: [
     {
       niche: "Online strength coach",
-      image: "",
+      image: "/results/online-strength-coach.jpg",
       from: "$8K / mo",
       to: "$19K / mo",
       timeframe: "54 days",
@@ -53,7 +53,7 @@ export const results = {
     },
     {
       niche: "Nutrition influencer",
-      image: "",
+      image: "/results/nutrition-influencer.jpg",
       from: "$14K / mo",
       to: "$31K / mo",
       timeframe: "60 days",
@@ -61,7 +61,7 @@ export const results = {
     },
     {
       niche: "Hybrid training brand",
-      image: "",
+      image: "/results/hybrid-training-brand.jpg",
       from: "$22K / mo",
       to: "$48K / mo",
       timeframe: "49 days",
