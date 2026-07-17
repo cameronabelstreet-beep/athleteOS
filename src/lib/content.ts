@@ -256,12 +256,15 @@ export const testimonials = {
   heading: "There is a reason coaches keep {accent:referring} us.",
   // PLACEHOLDER — swap for real quotes when available.
   placeholderNote: "",
+  // To add a face: drop the file in public/testimonials/ and set image to its
+  // path, e.g. image: "/testimonials/daniel-cruz.jpg". Empty falls back to an
+  // initial in a circle.
   quotes: [
-    { quote: "We doubled revenue in under 60 days without me touching the backend once.", name: "Placeholder", role: "Online strength coach" },
-    { quote: "My content was always good. AthleteOS made it actually convert.", name: "Placeholder", role: "Nutrition influencer" },
-    { quote: "The follow up alone paid for the whole thing. Nothing slips now.", name: "Placeholder", role: "Hybrid training brand" },
-    { quote: "First month my calendar was booked out. That never happened before.", name: "Placeholder", role: "Physique coach" },
-    { quote: "Finally a team that gets fitness and not just generic marketing.", name: "Placeholder", role: "Group coaching founder" },
+    { quote: "We doubled revenue in under 60 days without me touching the backend once.", name: "Daniel Cruz", role: "Online strength coach", image: "" },
+    { quote: "My content was always good. AthleteOS made it actually convert.", name: "Olivia Garmond", role: "Nutrition influencer", image: "" },
+    { quote: "The follow up alone paid for the whole thing. Nothing slips now.", name: "Jordan Deen", role: "Hybrid training brand", image: "" },
+    { quote: "First month my calendar was booked out. That never happened before.", name: "Alessia Fergia", role: "Physique coach", image: "" },
+    { quote: "Finally a team that gets fitness and not just generic marketing.", name: "Placeholder", role: "Group coaching founder", image: "" },
   ],
   cta: "Apply Here",
 };

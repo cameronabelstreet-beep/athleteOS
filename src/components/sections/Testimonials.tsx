@@ -49,12 +49,22 @@ export function Testimonials() {
                     &ldquo;{q.quote}&rdquo;
                   </blockquote>
                   <figcaption className="mt-8 flex items-center gap-3">
-                    <span
-                      className="flex h-11 w-11 items-center justify-center rounded-full bg-accent-tint text-sm font-bold text-accent-strong"
-                      aria-hidden
-                    >
-                      {q.role.slice(0, 1)}
-                    </span>
+                    {q.image ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={q.image}
+                        alt={q.name}
+                        loading="lazy"
+                        className="h-11 w-11 shrink-0 rounded-full object-cover"
+                      />
+                    ) : (
+                      <span
+                        className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-accent-tint text-sm font-bold text-accent-strong"
+                        aria-hidden
+                      >
+                        {q.name.slice(0, 1)}
+                      </span>
+                    )}
                     <span>
                       <span className="block font-semibold text-ink">
                         {q.name}
