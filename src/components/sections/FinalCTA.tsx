@@ -22,6 +22,13 @@ export function FinalCTA() {
         </Reveal>
 
         <Reveal className="mx-auto mt-10 max-w-2xl" delay={0.15}>
+          <p className="mx-auto max-w-xl text-center text-[0.98rem] font-semibold text-ink">
+            {finalCta.qualifier}
+          </p>
+          <p className="mx-auto mt-2 max-w-xl text-center text-sm text-muted">
+            {finalCta.scarcity}
+          </p>
+          <div className="mt-6">
           {hasForm ? (
             <div className="overflow-hidden rounded-3xl border border-line bg-surface">
               <iframe
@@ -55,6 +62,7 @@ export function FinalCTA() {
               <p className="mt-4 text-sm text-muted">{finalCta.microcopy}</p>
             </div>
           )}
+          </div>
         </Reveal>
       </Container>
     </section>

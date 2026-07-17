@@ -60,6 +60,10 @@ export function Hero() {
 
           <p className="mt-5 max-w-2xl text-lead text-ink-soft">{hero.sub}</p>
 
+          <p className="mt-4 max-w-xl text-[0.95rem] text-muted">
+            {hero.supporting}
+          </p>
+
           <div className="mt-8 flex flex-col items-center gap-3">
             <MagnetizeCTA count={55} spreadX={1500} spreadUp={520} spreadDown={200}>
               {hero.cta}

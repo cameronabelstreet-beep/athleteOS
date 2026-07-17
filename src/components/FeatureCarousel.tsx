@@ -140,10 +140,18 @@ function FeatureCard({ step }: { step: number }) {
               {steps[step].title}
             </motion.h3>
             <motion.p
+              className="text-[0.95rem] font-semibold text-ink"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.13, duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            >
+              {steps[step].framing}
+            </motion.p>
+            <motion.p
               className="text-[0.98rem] leading-relaxed text-ink-soft"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.15, duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ delay: 0.18, duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             >
               {steps[step].description}
             </motion.p>

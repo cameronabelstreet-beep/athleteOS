@@ -28,8 +28,10 @@ export const hero = {
   pill: `Only ${siteConfig.spotsLeft} onboarding spots left this month`,
   // {accent:...} marks the italic serif emphasis word.
   // Locked positioning copy (Monday Positioning Doc v1, locked June 28, 2026).
-  headline: "The only done-for-you acquisition system built {accent:exclusively} for fitness coaches and influencers.",
-  sub: "We install a done-for-you acquisition system across your ads, funnels, and workflows. Double your revenue in 60 days or you don't pay.",
+  headline: "{accent:Double} your coaching revenue in 60 days or you don't pay.",
+  sub: "We handle the content, the ads, the DMs and the follow-up system. You just coach.",
+  supporting:
+    "The only done-for-you acquisition system built exclusively for fitness coaches and influencers.",
   cta: "Apply Here",
   microcopy: "Takes under 60 seconds. No upfront payment.",
 };
@@ -93,31 +95,17 @@ export const painBlock = {
   intro:
     "If a few of these hit home, the problem is not your effort. It is the system behind your offer.",
   image: "/pain/pain-points.jpg",
-  pains: [
-    {
-      title: "Your audience is big, but the sales don't match it.",
-      body: "The following is there. The revenue isn't, because the backend isn't built to convert it.",
-    },
-    {
-      title: "Your DMs are full, your calendar isn't.",
-      body: "Interested people reach out and then nothing catches them or books them.",
-    },
-    {
-      title: "You post every day and still ride the feast-or-famine rollercoaster.",
-      body: "No predictable system, so income swings hard from month to month.",
-    },
-    {
-      title: "Leads go cold before you follow up.",
-      body: "No workflows, no nurture, so warm people forget you within a day.",
-    },
-    {
-      title: "Your ads lose money and you can't tell why.",
-      body: "If they run at all, they burn cash with no clear system behind them.",
-    },
-    {
-      title: "You are the coach, the closer, the editor, and the admin.",
-      body: "Everything runs through you, so nothing scales past you.",
-    },
+  // Persona-targeting blocks: compliment what they do well, then name the gap.
+  // A [CLIENT RESULT PLACEHOLDER] renders after each so Cam can drop the
+  // "if yes, meet [client]" story in on a second pass.
+  resultPlaceholder: "[CLIENT RESULT PLACEHOLDER — Cam will add in second pass]",
+  personas: [
+    "Are you a fitness coach who already has paying clients who genuinely love working with you, but no matter how hard you push, you can't seem to break past where you are right now?",
+    "Are you a fitness influencer who has spent years building a real, engaged audience, but can't consistently convert those followers into high-paying coaching clients?",
+    "Are you a personal trainer who gets incredible results in person, but when it comes to online, you are starting from scratch and don't know where your next client is coming from?",
+    "Are you a fitness coach who has already tried running ads, spent real money, and got almost nothing back, and now you're not sure if paid ads even work for a coaching business?",
+    "Are you a coach who has mastered the hardest part, delivering real transformations, but the content, the ads, the DMs and the sales calls are eating the hours you should be spending with your clients?",
+    "Are you a coach who is genuinely elite at the training itself, but you were never taught the marketing, the sales, and the systems that turn that skill into a full calendar?",
   ],
   bridge:
     "We've been there, we've done that. We can guarantee your revenue doubled because we've done it before and we can do it again.",
@@ -135,6 +123,8 @@ export const services = {
       title: "Paid ads that bring buyers, not just clicks.",
       description:
         "We build and manage paid ads around your offer and your audience, so paid traffic finally returns buyers and scales the moment you want more.",
+      framing:
+        "You have the transformation story. We build and run the ads that put it in front of the right people every day.",
       panels: ["Ad manager", "ROAS report"],
       images: ["/services/ads-manager.avif", "/services/ads-manager-2.avif"],
       mocks: [] as string[],
@@ -144,6 +134,8 @@ export const services = {
       title: "Your content, turned into booked calls.",
       description:
         "We add the guidance and branding that turns your existing views into booked calls, so the audience you already built starts producing real revenue.",
+      framing:
+        "You have the expertise and results. We build the content system that turns it into consistent inbound leads.",
       panels: ["Content plan", "Booked call"],
       images: [] as string[],
       mocks: ["feed", "dm"],
@@ -152,7 +144,9 @@ export const services = {
       name: "Referrals",
       title: "Referrals that run on their own.",
       description:
-        "We install a referral system that makes introductions automatic, so your cheapest acquisition channel finally works for you.",
+        "We install a referral system that makes introductions automatic, so your cheapest growth channel finally works for you.",
+      framing:
+        "You have happy clients. We install the system that turns them into your most reliable source of new business.",
       panels: ["Referral flow"],
       images: [] as string[],
       mocks: ["referral"],
@@ -162,6 +156,8 @@ export const services = {
       title: "Follow up that never lets a lead go cold.",
       description:
         "We build the follow up, booking, and nurture workflows behind the scenes, so no lead slips through and more turn into paying clients.",
+      framing:
+        "You have the right service. We install the backend that lets you scale without adding hours to your week.",
       panels: ["Automation map"],
       images: [] as string[],
       mocks: ["automation"],
@@ -231,10 +227,10 @@ export const compound = {
 export const process = {
   label: "How we deliver",
   heading: "Our 4-step process to {accent:double} your fitness brand.",
-  sub: "Clear, done for you, and built around how coaches and influencers actually grow.",
+  sub: "The AthleteOS Acquisition Engine is the system we install. Four steps, fully done for you, built around how coaches and influencers actually grow.",
   steps: [
     { no: "01", title: "Audit", line: "We map your funnel, content, ads, and follow up to find exactly where your fitness leads leak out." },
-    { no: "02", title: "Install", line: "We build and install your acquisition system across ads, organic, referrals, and workflows." },
+    { no: "02", title: "Install", line: "We build and install your full growth system across ads, organic, referrals, and workflows." },
     { no: "03", title: "Optimize", line: "We tune everything against real numbers, not guesses, so conversion climbs." },
     { no: "04", title: "Scale", line: "We double down on what is converting to hit the revenue goal we guaranteed." },
   ],
@@ -296,8 +292,12 @@ export const guarantee = {
 export const finalCta = {
   heading: "Ready to {accent:double} your revenue in 60 days?",
   sub: "No upfront payment. If we don't hit it, you don't pay for the work. The risk is ours, not yours.",
+  qualifier:
+    "Built for fitness coaches and influencers who are already delivering real results and are ready to scale.",
+  scarcity:
+    "We take on a limited number of new clients each month to make sure every partner gets our full attention.",
   pill: `Only ${siteConfig.spotsLeft} onboarding spots left this month`,
-  cta: "Apply Here",
+  cta: "Apply for Your Free Growth Audit",
   microcopy: "Takes under 60 seconds.",
   // Shown in place of the embed until the Typeform URL is set.
   embedPlaceholder: "Your Typeform embeds here once the URL is set.",
