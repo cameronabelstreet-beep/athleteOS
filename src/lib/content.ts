@@ -260,10 +260,10 @@ export const testimonials = {
   // path, e.g. image: "/testimonials/daniel-cruz.jpg". Empty falls back to an
   // initial in a circle.
   quotes: [
-    { quote: "We doubled revenue in under 60 days without me touching the backend once.", name: "Daniel Cruz", role: "Online strength coach", image: "" },
-    { quote: "My content was always good. AthleteOS made it actually convert.", name: "Olivia Garmond", role: "Nutrition influencer", image: "" },
-    { quote: "The follow up alone paid for the whole thing. Nothing slips now.", name: "Jordan Deen", role: "Hybrid training brand", image: "" },
-    { quote: "First month my calendar was booked out. That never happened before.", name: "Alessia Fergia", role: "Physique coach", image: "" },
+    { quote: "We doubled revenue in under 60 days without me touching the backend once.", name: "Daniel Cruz", role: "Online strength coach", image: "/testimonials/daniel.jpg" },
+    { quote: "My content was always good. AthleteOS made it actually convert.", name: "Olivia Garmond", role: "Nutrition influencer", image: "/testimonials/olivia.jpg" },
+    { quote: "The follow up alone paid for the whole thing. Nothing slips now.", name: "Jordan Deen", role: "Hybrid training brand", image: "/testimonials/jordan.jpg" },
+    { quote: "First month my calendar was booked out. That never happened before.", name: "Alessia Fergia", role: "Physique coach", image: "/testimonials/alessia.jpg" },
     { quote: "Finally a team that gets fitness and not just generic marketing.", name: "Placeholder", role: "Group coaching founder", image: "" },
   ],
   cta: "Apply Here",
