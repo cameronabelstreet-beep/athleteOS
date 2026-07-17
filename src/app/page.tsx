@@ -6,6 +6,7 @@ import { PainBlock } from "@/components/sections/PainBlock";
 import { Services } from "@/components/sections/Services";
 import { CompoundLoop } from "@/components/sections/CompoundLoop";
 import { Process } from "@/components/sections/Process";
+import { WhoFor } from "@/components/sections/WhoFor";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { Comparison } from "@/components/sections/Comparison";
 import { Reviews } from "@/components/sections/Reviews";
@@ -23,8 +24,9 @@ export default function Home() {
         <OneLiner />
         <PainBlock />
         <Services />
-        <CompoundLoop />
         <Process />
+        <CompoundLoop />
+        <WhoFor />
         <Testimonials />
         <Comparison />
         <Reviews />

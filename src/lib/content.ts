@@ -77,7 +77,7 @@ export const oneLiner = {
   // Repointed to "who it's for" so it complements the hero (which now owns the
   // positioning line) instead of duplicating it. No revenue figures, per Cam.
   statement:
-    "Made for fitness coaches and influencers with a proven offer, a real audience, and a backend that {accent:leaks}.",
+    "Are you struggling to bridge the gap between running a business/sales and content/coaching expertise? You're at the right place. Apply in under 60 seconds to see if you're ready to {accent:double} your current revenue.",
   sub: "Double your revenue in 60 days or you don't pay.",
   cta: "Apply Here",
   image: "/oneliner/fitness-influencer.jpg",
@@ -235,6 +235,19 @@ export const process = {
     { no: "04", title: "Scale", line: "We double down on what is converting to hit the revenue goal we guaranteed." },
   ],
   cta: "Apply Here",
+};
+
+export const whoFor = {
+  label: "Who this is for",
+  heading: "For coaches done guessing and ready for {accent:structure}.",
+  sub: "This system is built for online fitness coaches who:",
+  items: [
+    "Already sell coaching programs",
+    "Want consistent monthly income",
+    "Are tired of relying on posting for leads",
+    "Want higher-quality clients",
+    "Want systems that scale without burnout",
+  ],
 };
 
 export const testimonials = {
