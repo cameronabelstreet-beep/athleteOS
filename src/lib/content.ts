@@ -77,7 +77,7 @@ export const oneLiner = {
   // Repointed to "who it's for" so it complements the hero (which now owns the
   // positioning line) instead of duplicating it. No revenue figures, per Cam.
   statement:
-    "Are you struggling to bridge the gap between running a business/sales and content/coaching expertise? You're at the right place. Apply in under 60 seconds to see if you're ready to {accent:double} your current revenue.",
+    "Are you struggling to bridge the gap between business/sales and content/coaching expertise? You're at the right place. Apply in under 60 seconds to see if you're ready to {accent:double} your current revenue.",
   sub: "Double your revenue in 60 days or you don't pay.",
   cta: "Apply Here",
   image: "/oneliner/fitness-influencer.jpg",

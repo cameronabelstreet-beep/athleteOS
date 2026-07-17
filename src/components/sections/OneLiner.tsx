@@ -48,7 +48,7 @@ export function OneLiner() {
 
             {/* Copy (right) */}
             <div className="text-center lg:text-left">
-              <h2 className="text-h1">
+              <h2 className="text-[clamp(1.69rem,1.05rem+2.85vw,3rem)]">
                 <AccentText text={oneLiner.statement} />
               </h2>
               <p className="mt-5 text-lead font-medium text-accent-strong">

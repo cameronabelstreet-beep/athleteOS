@@ -26,10 +26,13 @@ export function WhoFor() {
                 i === whoFor.items.length - 1 ? "sm:col-span-2" : undefined
               }
             >
-              <div className="relative isolate flex h-full items-center justify-center rounded-2xl border border-line bg-bg px-6 py-5 text-center">
-                {/* Navy gradient behind each box. */}
-                <Glow className="-inset-2 rounded-[1.2rem] blur-xl" strength={38} />
-                <span className="font-semibold text-ink">{item}</span>
+              <div className="relative isolate h-full">
+                {/* Navy gradient behind the box, so it halos the edges only.
+                    The box itself stays solid (opaque), not tinted. */}
+                <Glow className="-inset-2 rounded-[1.4rem] blur-xl" strength={44} />
+                <div className="relative flex h-full items-center justify-center rounded-2xl border border-line bg-bg px-6 py-5 text-center">
+                  <span className="font-semibold text-ink">{item}</span>
+                </div>
               </div>
             </Reveal>
           ))}
