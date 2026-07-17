@@ -22,9 +22,11 @@ export function Testimonials() {
               <AccentText text={testimonials.heading} />
             </h2>
           </div>
-          <p className="text-sm text-muted md:max-w-[15rem] md:text-right">
-            {testimonials.placeholderNote}
-          </p>
+          {testimonials.placeholderNote && (
+            <p className="text-sm text-muted md:max-w-[15rem] md:text-right">
+              {testimonials.placeholderNote}
+            </p>
+          )}
         </Reveal>
 
         {/* Slider. Motion is intentionally basic; the polished animation is a

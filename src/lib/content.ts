@@ -108,7 +108,8 @@ export const painBlock = {
     "Are you a coach who is genuinely elite at the training itself, but you were never taught the marketing, the sales, and the systems that turn that skill into a full calendar?",
   ],
   bridge:
-    "We've been there, we've done that. We can guarantee your revenue doubled because we've done it before and we can do it again.",
+    "We've helped coaches & influencers get past these business roadblocks time and time again. Apply and see how we've done it for others. It takes less than a minute.",
+  cta: "Apply Here",
 };
 
 export const services = {
@@ -254,7 +255,7 @@ export const testimonials = {
   label: "In their words",
   heading: "There is a reason coaches keep {accent:referring} us.",
   // PLACEHOLDER — swap for real quotes when available.
-  placeholderNote: "Placeholder testimonials. Real client quotes go here.",
+  placeholderNote: "",
   quotes: [
     { quote: "We doubled revenue in under 60 days without me touching the backend once.", name: "Placeholder", role: "Online strength coach" },
     { quote: "My content was always good. AthleteOS made it actually convert.", name: "Placeholder", role: "Nutrition influencer" },

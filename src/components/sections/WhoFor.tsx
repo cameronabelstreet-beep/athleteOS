@@ -29,7 +29,7 @@ export function WhoFor() {
               <div className="relative isolate h-full">
                 {/* Navy gradient behind the box, so it halos the edges only.
                     The box itself stays solid (opaque), not tinted. */}
-                <Glow className="-inset-2 rounded-[1.4rem] blur-xl" strength={44} />
+                <Glow className="-inset-2 rounded-[1.4rem] blur-xl" strength={32} />
                 <div className="relative flex h-full items-center justify-center rounded-2xl border border-line bg-bg px-6 py-5 text-center">
                   <span className="font-semibold text-ink">{item}</span>
                 </div>

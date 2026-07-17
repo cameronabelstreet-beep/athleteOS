@@ -19,7 +19,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { painBlock } from "@/lib/content";
-import { AccentText, Container } from "@/components/primitives";
+import { AccentText, Container, CTAButton } from "@/components/primitives";
 import { Glow } from "@/components/Glow";
 
 // One icon per persona, in order.
@@ -199,12 +199,15 @@ export function PainBlock() {
 
         {/* Bridge closer */}
         <motion.div
-          className="mt-16 flex justify-center text-center"
+          className="mt-16 flex flex-col items-center text-center"
           {...reveal({ opacity: 0, y: 24 })}
         >
           <p className="mx-auto max-w-3xl text-h3 font-semibold leading-snug text-ink">
             {painBlock.bridge}
           </p>
+          <div className="mt-8">
+            <CTAButton size="lg">{painBlock.cta}</CTAButton>
+          </div>
         </motion.div>
       </Container>
     </section>
@@ -239,11 +242,6 @@ function PersonaItem({
         <p className="text-[0.98rem] font-medium leading-snug text-ink">
           {question}
         </p>
-        <div className="mt-3 rounded-lg border border-dashed border-line bg-bg px-3 py-2 text-center">
-          <p className="text-[0.6rem] font-semibold uppercase tracking-wide text-muted">
-            {painBlock.resultPlaceholder}
-          </p>
-        </div>
       </div>
     </motion.div>
   );
