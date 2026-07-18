@@ -91,7 +91,7 @@ export const oneLiner = {
 
 export const painBlock = {
   label: "Sound familiar",
-  heading: "You are doing the hard part {accent:right}. Something still isn't clicking.",
+  heading: "It's Time to Work {accent:Smarter}, Not Harder.",
   intro:
     "If a few of these hit home, the problem is not your effort. It is the system behind your offer.",
   image: "/pain/pain-points.jpg",
@@ -264,7 +264,7 @@ export const testimonials = {
     { quote: "My content was always good. AthleteOS made it actually convert.", name: "Olivia Garmond", role: "Nutrition influencer", image: "/testimonials/olivia.jpg" },
     { quote: "The follow up alone paid for the whole thing. Nothing slips now.", name: "Jordan Deen", role: "Hybrid training brand", image: "/testimonials/jordan.jpg" },
     { quote: "First month my calendar was booked out. That never happened before.", name: "Alessia Fergia", role: "Physique coach", image: "/testimonials/alessia.jpg" },
-    { quote: "Finally a team that gets fitness and not just generic marketing.", name: "Placeholder", role: "Group coaching founder", image: "" },
+    { quote: "Finally a team that gets fitness and not just generic marketing.", name: "Philipe Raison", role: "Group coaching founder", image: "" },
   ],
   cta: "Apply Here",
 };

@@ -46,8 +46,6 @@ export function Reviews() {
             <div className="mt-3">
               <Stars value={5} />
             </div>
-            <p className="mt-3 text-sm text-muted">{reviews.count}</p>
-            <p className="mt-6 text-sm text-muted">{reviews.placeholderNote}</p>
           </div>
 
           <div className="flex flex-col gap-3">

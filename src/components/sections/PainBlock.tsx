@@ -15,7 +15,6 @@ import {
   Target,
   Clock,
   Briefcase,
-  Sparkles,
   type LucideIcon,
 } from "lucide-react";
 import { painBlock } from "@/lib/content";
@@ -112,17 +111,9 @@ export function PainBlock() {
           className="flex flex-col items-center text-center"
           {...staggerGroup}
         >
-          <motion.span
-            variants={reduce ? undefined : item}
-            className="eyebrow inline-flex items-center gap-2"
-          >
-            <Sparkles className="h-3.5 w-3.5 text-accent" />
-            {painBlock.label}
-          </motion.span>
-
           <motion.h2
             variants={reduce ? undefined : item}
-            className="mt-4 max-w-3xl text-h2"
+            className="max-w-3xl text-h2"
           >
             <AccentText text={painBlock.heading} />
           </motion.h2>
