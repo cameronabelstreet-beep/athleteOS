@@ -13,7 +13,7 @@ export const siteConfig = {
   // How many onboarding spots to advertise this month.
   spotsLeft: 3,
   brand: "AthleteOS",
-  contactEmail: "hello@athleteos.co", // placeholder, confirm real contact
+  contactEmail: "cameron@joinathleteos.com",
 };
 
 export const nav = {
