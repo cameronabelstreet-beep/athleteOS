@@ -8,8 +8,8 @@ export const siteConfig = {
   // Typeform ID = the part after typeform.com/to/ in the form's share URL.
   // When set, every "Apply" button opens the form in a popup overlay (no
   // redirect). Empty falls back to scrolling to the on-page #apply section.
-  typeformId: "",
-  typeformUrl: "",
+  typeformId: "YlCQikDx",
+  typeformUrl: "https://form.typeform.com/to/YlCQikDx",
   // How many onboarding spots to advertise this month.
   spotsLeft: 3,
   brand: "AthleteOS",
