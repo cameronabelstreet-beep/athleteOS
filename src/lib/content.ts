@@ -5,8 +5,10 @@
 // ============================================================================
 
 export const siteConfig = {
-  // Paste the AthleteOS Typeform URL here when ready. Leave empty to fall back
-  // to the on-page apply section (#apply) so every CTA still works.
+  // Typeform ID = the part after typeform.com/to/ in the form's share URL.
+  // When set, every "Apply" button opens the form in a popup overlay (no
+  // redirect). Empty falls back to scrolling to the on-page #apply section.
+  typeformId: "",
   typeformUrl: "",
   // How many onboarding spots to advertise this month.
   spotsLeft: 3,

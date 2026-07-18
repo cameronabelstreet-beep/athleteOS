@@ -1,3 +1,6 @@
+"use client";
+
+import { PopupButton } from "@typeform/embed-react";
 import { siteConfig } from "@/lib/content";
 import type { ReactNode } from "react";
 
@@ -111,13 +114,28 @@ export function CTAButton({
     ghost:
       "border border-line bg-transparent text-ink hover:border-ink/30 hover:bg-surface hover:shadow-[0_16px_34px_-20px_oklch(0.24_0.01_265/0.4)]",
   };
-  return (
-    <a
-      href={href}
-      className={`${base} ${sizes[size]} ${variants[variant]} ${className}`}
-    >
+  const classes = `${base} ${sizes[size]} ${variants[variant]} ${className}`;
+  const inner = (
+    <>
       {children}
       <ArrowIcon className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
+    </>
+  );
+
+  // When a Typeform ID is configured, every CTA opens the form in a popup
+  // overlay so people apply without leaving the page. Otherwise fall back to
+  // the on-page apply link.
+  if (siteConfig.typeformId) {
+    return (
+      <PopupButton id={siteConfig.typeformId} className={classes}>
+        {inner}
+      </PopupButton>
+    );
+  }
+
+  return (
+    <a href={href} className={classes}>
+      {inner}
     </a>
   );
 }
