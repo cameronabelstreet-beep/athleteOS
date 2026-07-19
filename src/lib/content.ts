@@ -97,9 +97,10 @@ export const oneLiner = {
   bioLabel: "Who am I?",
   bio: [
     "Working with top brands taught me brand positioning and presentability",
-    "Over 5+ years as a personal trainer because I fell in love with transforming lives",
-    "I hit the revenue ceiling of a PT and then spent years developing the AthleteOS Acquisition Engine",
-    "Doubled my revenue and now do the same for others",
+    "Collaborated with Nike, Nocta, The North Face, and many more top fitness brands",
+    "Coached and transformed over 100 clients with 5+ years as a personal trainer",
+    "Drove $330K+ in revenue after breaking through the PT rev ceiling with the AthleteOS Acquisition Engine",
+    "Scaled over 30+ fitness coaches & trainers",
   ],
   // Honest trust strip. No partner badges we do not hold.
   trust: [

@@ -56,7 +56,7 @@ export function OneLiner() {
                 {oneLiner.bio.map((line, i) => (
                   <li
                     key={i}
-                    className="flex gap-3 text-[0.98rem] leading-snug text-ink-soft"
+                    className="flex gap-3 text-[1.08rem] leading-snug text-ink-soft"
                   >
                     <span
                       aria-hidden
