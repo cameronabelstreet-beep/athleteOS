@@ -76,14 +76,25 @@ export const results = {
 };
 
 export const oneLiner = {
-  // Repointed to "who it's for" so it complements the hero (which now owns the
-  // positioning line) instead of duplicating it. No revenue figures, per Cam.
+  // Founder mini-bio section. Hook question, guarantee subheader, then Cam's
+  // short story (brands + PT credibility), then the CTA.
   statement:
-    "Are you struggling to bridge the gap between business/sales and content/coaching expertise? You're at the right place. Apply in under 60 seconds to see if you're ready to {accent:double} your current revenue.",
+    "Are you struggling to bridge the {accent:gap} between business/sales and content/coaching expertise?",
   sub: "Double your revenue in 60 days or you don't pay.",
   cta: "Apply Here",
   image: "/oneliner/fitness-influencer.jpg",
-  // Honest trust strip. No partner badges we do not hold. Confirm with Cam.
+  founder: "Cameron Street",
+  founderRole: "Founder of AthleteOS",
+  bioLabel: "How I got here",
+  bio: [
+    "Fitness model for Nike, Nocta, and The North Face.",
+    "That world drilled in one lesson. Positioning is everything. The coaches who win are the ones the right people notice, not always the most talented.",
+    "Then five years as a personal trainer. Real clients, real transformations.",
+    "Around $5K to $10K a month I hit the ceiling every coach hits. Busy, but not growing. The gap was never my coaching. It was the system behind it.",
+    "So I spent six months building what became the AthleteOS Acquisition Engine. The right content, the right outreach, the right funnel.",
+    "Now I run that system for coaches and influencers who are great at what they do but stuck on the business side. I do not teach you marketing. I run it for you.",
+  ],
+  // Honest trust strip. No partner badges we do not hold.
   trust: [
     "Built for coaches and influencers with a proven offer and a real audience",
     "Founder-led by a fitness model who knows the space",
