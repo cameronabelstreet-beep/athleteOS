@@ -7,6 +7,7 @@ import {
 } from "@/components/primitives";
 import { Reveal } from "@/components/Reveal";
 import { Glow } from "@/components/Glow";
+import { BioPhoto } from "@/components/BioPhoto";
 
 export function OneLiner() {
   return (
@@ -28,21 +29,10 @@ export function OneLiner() {
               <div className="relative isolate">
                 {/* Navy glow behind the photo. */}
                 <Glow className="-inset-6 rounded-[2.5rem] blur-2xl" strength={42} />
-                <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-line bg-gradient-to-br from-surface-2 to-accent-tint">
-                  {oneLiner.image ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
-                      src={oneLiner.image}
-                      alt="Cameron Street, founder of AthleteOS"
-                      loading="lazy"
-                      className="absolute inset-0 h-full w-full object-cover"
-                    />
-                  ) : (
-                    <span className="absolute inset-0 flex items-center justify-center text-xs font-medium uppercase tracking-wider text-muted">
-                      Photo
-                    </span>
-                  )}
-                </div>
+                <BioPhoto
+                  images={oneLiner.images}
+                  alt="Cameron Street, founder of AthleteOS"
+                />
                 {/* Offset navy frame accent behind the photo. */}
                 <div
                   aria-hidden
@@ -78,9 +68,11 @@ export function OneLiner() {
                 ))}
               </ul>
 
-              <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
-                <CTAButton size="lg">{oneLiner.cta}</CTAButton>
-                <p className="text-[0.95rem] font-medium text-accent-strong">
+              <div className="mt-8 flex flex-col items-start gap-x-5 gap-y-3 sm:flex-row sm:flex-wrap sm:items-center">
+                <CTAButton size="lg" className="shrink-0 whitespace-nowrap">
+                  {oneLiner.cta}
+                </CTAButton>
+                <p className="text-[0.95rem] font-medium text-accent-strong sm:whitespace-nowrap">
                   {oneLiner.sub}
                 </p>
               </div>

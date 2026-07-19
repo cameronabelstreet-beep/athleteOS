@@ -82,17 +82,24 @@ export const oneLiner = {
     "Are you struggling to bridge the {accent:gap} between business/sales and content/coaching expertise?",
   sub: "Double your revenue in 60 days or you don't pay.",
   cta: "Apply Here",
-  image: "/oneliner/fitness-influencer.jpg",
+  // Rotating founder photos (brand work + PT). Cycle in the photo slot.
+  images: [
+    "/bio/gym-1.jpg",
+    "/bio/modelling.jpg",
+    "/bio/northface.jpg",
+    "/bio/nike.jpg",
+    "/bio/gym-2.jpg",
+    "/bio/northface-billboard.jpg",
+    "/bio/model-2.jpg",
+  ],
   founder: "Cameron Street",
   founderRole: "Founder of AthleteOS",
   bioLabel: "Who am I?",
   bio: [
-    "Fitness model for Nike, Nocta, and The North Face.",
-    "That world drilled in one lesson. Positioning is everything. The coaches who win are the ones the right people notice, not always the most talented.",
-    "Then five years as a personal trainer. Real clients, real transformations.",
-    "Around $5K to $10K a month I hit the ceiling every coach hits. Busy, but not growing. The gap was never my coaching. It was the system behind it.",
-    "So I spent six months building what became the AthleteOS Acquisition Engine. The right content, the right outreach, the right funnel.",
-    "Now I run that system for coaches and influencers who are great at what they do but stuck on the business side. I do not teach you marketing. I run it for you.",
+    "Working with top brands taught me brand positioning and presentability",
+    "Over 5+ years as a personal trainer because I fell in love with transforming lives",
+    "I hit the revenue ceiling of a PT and then spent years developing the AthleteOS Acquisition Engine",
+    "Doubled my revenue and now do the same for others",
   ],
   // Honest trust strip. No partner badges we do not hold.
   trust: [
