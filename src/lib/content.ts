@@ -84,11 +84,11 @@ export const oneLiner = {
   cta: "Apply Here",
   // Rotating founder photos (brand work + PT). Cycle in the photo slot.
   images: [
-    "/bio/gym-1.jpg",
+    "/bio/gym-2.jpg",
     "/bio/modelling.jpg",
+    "/bio/gym-1.jpg",
     "/bio/northface.jpg",
     "/bio/nike.jpg",
-    "/bio/gym-2.jpg",
     "/bio/northface-billboard.jpg",
     "/bio/model-2.jpg",
   ],
