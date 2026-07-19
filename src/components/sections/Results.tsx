@@ -80,7 +80,6 @@ export function Results() {
             <AccentText text={results.heading} />
           </h2>
           <p className="mt-3 text-lead text-ink-soft">{results.sub}</p>
-          <p className="mt-4 text-sm text-muted">{results.placeholderNote}</p>
         </div>
       </Container>
     </section>
