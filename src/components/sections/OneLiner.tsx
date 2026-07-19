@@ -68,13 +68,15 @@ export function OneLiner() {
                 ))}
               </ul>
 
-              <div className="mt-8 flex flex-col items-start gap-x-5 gap-y-3 sm:flex-row sm:flex-wrap sm:items-center">
-                <CTAButton size="lg" className="shrink-0 whitespace-nowrap">
-                  {oneLiner.cta}
-                </CTAButton>
-                <p className="text-[0.95rem] font-medium text-accent-strong sm:whitespace-nowrap">
+              <div className="mt-8">
+                <p className="text-[0.95rem] font-medium text-accent-strong">
                   {oneLiner.sub}
                 </p>
+                <div className="mt-4">
+                  <CTAButton size="lg" className="whitespace-nowrap">
+                    {oneLiner.cta}
+                  </CTAButton>
+                </div>
               </div>
             </div>
           </div>

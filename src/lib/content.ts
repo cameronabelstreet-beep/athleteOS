@@ -84,17 +84,17 @@ export const oneLiner = {
   cta: "Apply Here",
   // Rotating founder photos (brand work + PT). Cycle in the photo slot.
   images: [
+    "/bio/model-2.jpg",
     "/bio/gym-2.jpg",
     "/bio/modelling.jpg",
     "/bio/gym-1.jpg",
     "/bio/northface.jpg",
     "/bio/nike.jpg",
     "/bio/northface-billboard.jpg",
-    "/bio/model-2.jpg",
   ],
   founder: "Cameron Street",
   founderRole: "Founder of AthleteOS",
-  bioLabel: "Who am I?",
+  bioLabel: "Here's why I can help:",
   bio: [
     "Working with top brands taught me brand positioning and presentability",
     "Collaborated with Nike, Nocta, The North Face, and many more top fitness brands",
