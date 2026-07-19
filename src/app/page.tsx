@@ -4,7 +4,10 @@ import { Results } from "@/components/sections/Results";
 import { OneLiner } from "@/components/sections/OneLiner";
 import { PainBlock } from "@/components/sections/PainBlock";
 import { Services } from "@/components/sections/Services";
-import { CompoundLoop } from "@/components/sections/CompoundLoop";
+// TABLED: "Why it works" section. Component preserved at
+// sections/CompoundLoop.tsx. Uncomment this import + the <CompoundLoop /> below
+// to bring it back.
+// import { CompoundLoop } from "@/components/sections/CompoundLoop";
 import { Process } from "@/components/sections/Process";
 import { WhoFor } from "@/components/sections/WhoFor";
 import { Testimonials } from "@/components/sections/Testimonials";
@@ -24,7 +27,7 @@ export default function Home() {
         <PainBlock />
         <Services />
         <Process />
-        <CompoundLoop />
+        {/* <CompoundLoop /> tabled for now — see import note above to restore. */}
         <WhoFor />
         <Testimonials />
         <Comparison />
