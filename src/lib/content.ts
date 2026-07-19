@@ -85,7 +85,7 @@ export const oneLiner = {
   image: "/oneliner/fitness-influencer.jpg",
   founder: "Cameron Street",
   founderRole: "Founder of AthleteOS",
-  bioLabel: "How I got here",
+  bioLabel: "Who am I?",
   bio: [
     "Fitness model for Nike, Nocta, and The North Face.",
     "That world drilled in one lesson. Positioning is everything. The coaches who win are the ones the right people notice, not always the most talented.",

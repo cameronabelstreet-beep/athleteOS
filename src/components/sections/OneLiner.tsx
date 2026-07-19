@@ -14,8 +14,15 @@ export function OneLiner() {
       {/* Ambient navy glow in the top-right of the section. */}
       <Glow className="-right-24 -top-24 h-[26rem] w-[26rem] rounded-full blur-3xl" strength={40} />
       <Container>
-        <Reveal>
-          <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
+        {/* Headline above the whole section */}
+        <Reveal className="mx-auto max-w-4xl text-center">
+          <h2 className="text-[clamp(1.69rem,1.05rem+2.85vw,3rem)]">
+            <AccentText text={oneLiner.statement} />
+          </h2>
+        </Reveal>
+
+        <Reveal delay={0.1}>
+          <div className="mt-12 grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
             {/* Founder photo (left) */}
             <div className="mx-auto w-full max-w-sm lg:sticky lg:top-28 lg:mx-0">
               <div className="relative isolate">
@@ -52,37 +59,30 @@ export function OneLiner() {
               </div>
             </div>
 
-            {/* Copy (right) */}
-            <div className="text-center lg:text-left">
-              <h2 className="text-[clamp(1.69rem,1.05rem+2.85vw,3rem)]">
-                <AccentText text={oneLiner.statement} />
-              </h2>
-              <p className="mt-5 text-lead font-medium text-accent-strong">
-                {oneLiner.sub}
-              </p>
+            {/* Bio (right) */}
+            <div className="text-left">
+              <p className="eyebrow">{oneLiner.bioLabel}</p>
+              <ul className="mt-4 space-y-3">
+                {oneLiner.bio.map((line, i) => (
+                  <li
+                    key={i}
+                    className="flex gap-3 text-[0.98rem] leading-snug text-ink-soft"
+                  >
+                    <span
+                      aria-hidden
+                      className="mt-[0.5rem] h-1.5 w-1.5 shrink-0 rounded-full"
+                      style={{ backgroundColor: "var(--color-glow)" }}
+                    />
+                    <span>{line}</span>
+                  </li>
+                ))}
+              </ul>
 
-              {/* Founder mini-bio */}
-              <div className="mt-8 text-left">
-                <p className="eyebrow">{oneLiner.bioLabel}</p>
-                <ul className="mt-4 space-y-3">
-                  {oneLiner.bio.map((line, i) => (
-                    <li
-                      key={i}
-                      className="flex gap-3 text-[0.98rem] leading-snug text-ink-soft"
-                    >
-                      <span
-                        aria-hidden
-                        className="mt-[0.5rem] h-1.5 w-1.5 shrink-0 rounded-full"
-                        style={{ backgroundColor: "var(--color-glow)" }}
-                      />
-                      <span>{line}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="mt-8 flex justify-center lg:justify-start">
+              <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
                 <CTAButton size="lg">{oneLiner.cta}</CTAButton>
+                <p className="text-[0.95rem] font-medium text-accent-strong">
+                  {oneLiner.sub}
+                </p>
               </div>
             </div>
           </div>
