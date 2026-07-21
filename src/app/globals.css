@@ -181,8 +181,32 @@
   );
 }
 
+/* Slow auto-scrolling results slider (marquee). The track holds two copies of
+   the cards and slides by half its width for a seamless loop. Pauses on hover
+   and under reduced motion. */
+@keyframes results-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.results-track {
+  animation: results-marquee 70s linear infinite;
+  width: max-content;
+}
+
+.results-track:hover {
+  animation-play-state: paused;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+  .results-track {
+    animation: none;
   }
 }

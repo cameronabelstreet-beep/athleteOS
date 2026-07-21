@@ -72,6 +72,16 @@ export const results = {
       quote: "My calendar went from empty to booked out.",
     },
   ],
+  // Real proof screenshots (Slack wins + revenue dashboards). Shown at their
+  // natural ratio in the slider; caption padded so every card matches height.
+  proof: [
+    { image: "/case-studies/daniel.jpg", name: "Daniel", result: "$12k to $30-50k per month" },
+    { image: "/case-studies/garrett.jpg", name: "Garrett", result: "$146,710 collected" },
+    { image: "/case-studies/ed.jpg", name: "Ed", result: "$45,900 in a single month" },
+    { image: "/case-studies/spencer.jpg", name: "Spencer", result: "New funnel, two bookings on day one" },
+    { image: "/case-studies/cam.jpg", name: "Cam", result: "Around 15 leads overnight" },
+    { image: "/case-studies/dashboard.jpg", name: "Client channel", result: "9,315 views in 90 days" },
+  ],
   cta: "Apply Here",
 };
 
