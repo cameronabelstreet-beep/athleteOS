@@ -80,8 +80,8 @@ function ProofCard({ p }: { p: ProofItem }) {
 export function Results() {
   // One pass of every slide; rendered twice so the marquee loops seamlessly.
   const slides = (copy: string) => [
-    ...results.cases.map((c, i) => <CaseCard key={`${copy}-c${i}`} c={c} />),
     ...results.proof.map((p, i) => <ProofCard key={`${copy}-p${i}`} p={p} />),
+    ...results.cases.map((c, i) => <CaseCard key={`${copy}-c${i}`} c={c} />),
   ];
 
   return (
