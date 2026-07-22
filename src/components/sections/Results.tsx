@@ -78,11 +78,29 @@ function ProofCard({ p }: { p: ProofItem }) {
 }
 
 export function Results() {
-  // One pass of every slide; rendered twice so the marquee loops seamlessly.
-  const slides = (copy: string) => [
-    ...results.proof.map((p, i) => <ProofCard key={`${copy}-p${i}`} p={p} />),
-    ...results.cases.map((c, i) => <CaseCard key={`${copy}-c${i}`} c={c} />),
+  // Lead with the real proof, then scatter the 3 original cards so they never
+  // sit back to back. [kind, index-into-that-array].
+  const order: Array<["proof" | "case", number]> = [
+    ["proof", 0], // Daniel
+    ["proof", 1], // Garrett
+    ["proof", 2], // Ed
+    ["case", 0], // $19K/mo
+    ["proof", 3], // Spencer
+    ["case", 1], // $31K/mo
+    ["proof", 4], // Cam
+    ["case", 2], // $48K/mo
+    ["proof", 5], // dashboard
   ];
+
+  // One pass of every slide; rendered twice so the marquee loops seamlessly.
+  const slides = (copy: string) =>
+    order.map(([kind, i], n) =>
+      kind === "proof" ? (
+        <ProofCard key={`${copy}-${n}`} p={results.proof[i]} />
+      ) : (
+        <CaseCard key={`${copy}-${n}`} c={results.cases[i]} />
+      ),
+    );
 
   return (
     <section
