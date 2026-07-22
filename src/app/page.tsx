@@ -2,6 +2,7 @@ import { Nav } from "@/components/Nav";
 import { Hero } from "@/components/sections/Hero";
 import { Results } from "@/components/sections/Results";
 import { OneLiner } from "@/components/sections/OneLiner";
+import { BrandWork } from "@/components/sections/BrandWork";
 import { PainBlock } from "@/components/sections/PainBlock";
 import { Services } from "@/components/sections/Services";
 // TABLED: "Why it works" section. Component preserved at
@@ -24,6 +25,7 @@ export default function Home() {
         <Hero />
         <Results />
         <OneLiner />
+        <BrandWork />
         <PainBlock />
         <Services />
         <Process />

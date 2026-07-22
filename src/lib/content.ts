@@ -120,6 +120,40 @@ export const oneLiner = {
   ],
 };
 
+// Model / brand-work credibility. Text and images are placeholders; Cam fills
+// in per brand later. `image: ""` shows a labeled placeholder tile.
+export const brands = {
+  label: "Brand work",
+  heading: "The same positioning I built for {accent:top} brands.",
+  sub: "5+ years as a personal trainer, 100+ clients transformed, and a modeling career spent working with top athletic brands. The positioning and marketing that put me in the room is the exact system I now run for coaches.",
+  items: [
+    {
+      brand: "Nike",
+      role: "Athletic apparel campaign",
+      note: "The brand positioning and marketing behind this collaboration. Full write-up coming soon.",
+      image: "",
+    },
+    {
+      brand: "Adidas",
+      role: "Athletic apparel campaign",
+      note: "The brand positioning and marketing behind this collaboration. Full write-up coming soon.",
+      image: "",
+    },
+    {
+      brand: "Nocta",
+      role: "Campaign feature",
+      note: "The brand positioning and marketing behind this collaboration. Full write-up coming soon.",
+      image: "",
+    },
+    {
+      brand: "The North Face",
+      role: "Campaign feature",
+      note: "The brand positioning and marketing behind this collaboration. Full write-up coming soon.",
+      image: "",
+    },
+  ],
+};
+
 export const painBlock = {
   label: "Sound familiar",
   heading: "It's Time to Work {accent:Smarter}, Not Harder.",
