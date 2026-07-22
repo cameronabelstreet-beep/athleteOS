@@ -168,22 +168,22 @@ export const painBlock = {
   label: "Sound familiar",
   heading: "It's Time to Work {accent:Smarter}, Not Harder.",
   intro:
-    "If a few of these hit home, the problem is not your effort. It is the system behind your offer.",
+    "AthleteOS was created specifically for coaches who know that they are on the edge of something big with their current business.",
   image: "/pain/pain-points.jpg",
   // Persona-targeting blocks: compliment what they do well, then name the gap.
   // A [CLIENT RESULT PLACEHOLDER] renders after each so Cam can drop the
   // "if yes, meet [client]" story in on a second pass.
   resultPlaceholder: "[CLIENT RESULT PLACEHOLDER — Cam will add in second pass]",
   personas: [
-    "Are you a fitness coach who already has paying clients who genuinely love working with you, but no matter how hard you push, you can't seem to break past where you are right now?",
+    "You're already driving clear results and progress for others, but don't know how to scale?",
     "Are you a fitness influencer who has spent years building a real, engaged audience, but can't consistently convert those followers into high-paying coaching clients?",
-    "Are you a personal trainer who gets incredible results in person, but when it comes to online, you are starting from scratch and don't know where your next client is coming from?",
+    "You know a bigger marketing strategy is going to play a major role in the growth of your business, but you haven't got a clue where to start?",
     "Are you a fitness coach who has already tried running ads, spent real money, and got almost nothing back, and now you're not sure if paid ads even work for a coaching business?",
     "Are you a coach who has mastered the hardest part, delivering real transformations, but the content, the ads, the DMs and the sales calls are eating the hours you should be spending with your clients?",
-    "Are you a coach who is genuinely elite at the training itself, but you were never taught the marketing, the sales, and the systems that turn that skill into a full calendar?",
+    "You're doing everything in your business, you always feel stuck for time, and you know you can't progress doing the same?",
   ],
   bridge:
-    "We've helped coaches & influencers get past these business roadblocks time and time again. Apply and see how we've done it for others. It takes less than a minute.",
+    "It's time to earn what you deserve. Double your revenue or DON'T PAY.",
   cta: "Apply Here",
 };
 
