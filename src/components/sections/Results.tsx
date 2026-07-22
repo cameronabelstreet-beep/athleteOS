@@ -27,6 +27,11 @@ function CaseCard({ c }: { c: CaseItem }) {
 
       <div className="flex flex-1 flex-col p-6">
         <span className="text-sm font-medium text-muted">{c.niche}</span>
+        {c.handle ? (
+          <span className="mt-0.5 text-sm font-semibold text-accent-strong">
+            {c.handle}
+          </span>
+        ) : null}
         <div className="mt-4 flex items-baseline gap-3">
           <span className="text-lg text-muted line-through decoration-line decoration-1">
             {c.from}
@@ -56,13 +61,20 @@ function ProofCard({ p }: { p: ProofItem }) {
   return (
     <article className={cardBase}>
       <div className="shrink-0 bg-surface-2 p-4">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={p.image}
-          alt={`${p.name} result screenshot`}
-          loading="lazy"
-          className="w-full rounded-lg border border-line"
-        />
+        {/* One or more screenshots, stacked. Very tall ones clip to their top
+            (where the win is); the caption below fills the rest of the card. */}
+        <div className="flex max-h-[21rem] flex-col gap-2 overflow-hidden">
+          {p.images.map((src, i) => (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              key={i}
+              src={src}
+              alt={`${p.name} result screenshot`}
+              loading="lazy"
+              className="w-full rounded-lg border border-line"
+            />
+          ))}
+        </div>
       </div>
       <div className="flex flex-1 flex-col justify-center p-6">
         <span className="text-sm font-medium text-muted">{p.name}</span>
@@ -83,13 +95,19 @@ export function Results() {
   const order: Array<["proof" | "case", number]> = [
     ["proof", 0], // Daniel
     ["proof", 1], // Garrett
-    ["proof", 2], // Ed
+    ["proof", 2], // Matthew Silva
     ["case", 0], // $19K/mo
-    ["proof", 3], // Spencer
+    ["proof", 3], // Ed
+    ["proof", 4], // Kel
+    ["proof", 5], // Ryan
     ["case", 1], // $31K/mo
-    ["proof", 4], // Cam
+    ["proof", 6], // Emily
+    ["proof", 7], // Abraham
+    ["proof", 8], // Actilete
     ["case", 2], // $48K/mo
-    ["proof", 5], // dashboard
+    ["proof", 9], // Spencer
+    ["proof", 10], // Cam
+    ["proof", 11], // dashboard
   ];
 
   // One pass of every slide; rendered twice so the marquee loops seamlessly.

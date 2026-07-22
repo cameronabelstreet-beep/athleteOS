@@ -49,6 +49,7 @@ export const results = {
   cases: [
     {
       niche: "Online strength coach",
+      handle: "@builtbyvictor",
       image: "/results/online-strength-coach.jpg",
       from: "$8K / mo",
       to: "$19K / mo",
@@ -57,6 +58,7 @@ export const results = {
     },
     {
       niche: "Nutrition influencer",
+      handle: "@dietdiarybyjess",
       image: "/results/nutrition-influencer.jpg",
       from: "$14K / mo",
       to: "$31K / mo",
@@ -65,6 +67,7 @@ export const results = {
     },
     {
       niche: "Hybrid training brand",
+      handle: "@emilydoesfitness",
       image: "/results/hybrid-training-brand.jpg",
       from: "$22K / mo",
       to: "$48K / mo",
@@ -74,13 +77,20 @@ export const results = {
   ],
   // Real proof screenshots (Slack wins + revenue dashboards). Shown at their
   // natural ratio in the slider; caption padded so every card matches height.
+  // Each card holds one or more screenshots (stacked when a client sent several).
   proof: [
-    { image: "/case-studies/daniel.jpg", name: "Daniel", result: "$12k to $30-50k per month" },
-    { image: "/case-studies/garrett.jpg", name: "Garrett", result: "$146,710 collected" },
-    { image: "/case-studies/ed.jpg", name: "Ed", result: "$45,900 in a single month" },
-    { image: "/case-studies/spencer.jpg", name: "Spencer", result: "New funnel, two bookings on day one" },
-    { image: "/case-studies/cam.jpg", name: "Cam", result: "Around 15 leads overnight" },
-    { image: "/case-studies/dashboard.jpg", name: "Client channel", result: "9,315 views in 90 days" },
+    { images: ["/case-studies/daniel.jpg"], name: "Daniel", result: "$12k to $30-50k per month" },
+    { images: ["/case-studies/garrett.jpg"], name: "Garrett", result: "$146,710 collected" },
+    { images: ["/case-studies/matthew-silva.jpg"], name: "Matthew Silva", result: "$100.5K gross volume, six figures" },
+    { images: ["/case-studies/ed.jpg"], name: "Ed", result: "$45,900 in a single month" },
+    { images: ["/case-studies/kel-schiavone.jpg"], name: "Kel Schiavone", result: "$11,500 in 23 days" },
+    { images: ["/case-studies/ryan-wood.jpg"], name: "Ryan Wood", result: "$9K closed this week" },
+    { images: ["/case-studies/emily-stanley.jpg"], name: "Emily Stanley", result: "Over $4K in sales this week" },
+    { images: ["/case-studies/abraham.jpg"], name: "Abraham", result: "$4K in under 24 hours" },
+    { images: ["/case-studies/actilete-13k.jpg", "/case-studies/actilete-comment.jpg"], name: "Actilete", result: "$13,650 collected since Dec 1" },
+    { images: ["/case-studies/spencer.jpg"], name: "Spencer", result: "New funnel, two bookings on day one" },
+    { images: ["/case-studies/cam.jpg"], name: "Cam", result: "Around 15 leads overnight" },
+    { images: ["/case-studies/dashboard.jpg"], name: "Client channel", result: "9,315 views in 90 days" },
   ],
   cta: "Apply Here",
 };
