@@ -11,7 +11,7 @@ import { BioPhoto } from "@/components/BioPhoto";
 
 export function OneLiner() {
   return (
-    <section className="relative isolate overflow-hidden bg-surface py-20 sm:py-28">
+    <section className="relative isolate overflow-hidden bg-surface pt-20 pb-10 sm:pt-28 sm:pb-14">
       {/* Ambient navy glow in the top-right of the section. */}
       <Glow className="-right-24 -top-24 h-[26rem] w-[26rem] rounded-full blur-3xl" strength={40} />
       <Container>

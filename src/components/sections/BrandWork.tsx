@@ -26,24 +26,64 @@ export function BrandWork() {
   }, [reduce, next]);
 
   return (
-    <section className="relative overflow-hidden bg-surface py-20 sm:py-28">
+    <section className="relative overflow-hidden bg-surface pb-20 pt-6 sm:pb-28 sm:pt-10">
       <Container>
-        <Reveal className="mx-auto max-w-2xl text-center">
-          <Eyebrow>{brands.label}</Eyebrow>
-          <h2 className="mt-4 text-h2">
-            <AccentText text={brands.heading} />
-          </h2>
-          <p className="measure mx-auto mt-4 text-lead text-ink-soft">
-            {brands.sub}
-          </p>
-        </Reveal>
+        <div className="grid grid-cols-1 items-center gap-y-12 md:grid-cols-2 md:gap-x-16">
+          {/* LEFT: heading, supporting copy, and the rotating brand text */}
+          <Reveal>
+            <Eyebrow>{brands.label}</Eyebrow>
+            <h2 className="mt-4 text-h2">
+              <AccentText text={brands.heading} />
+            </h2>
+            <p className="mt-4 text-lead text-ink-soft">{brands.sub}</p>
 
-        <Reveal
-          className="mx-auto mt-14 grid max-w-4xl grid-cols-1 gap-y-12 md:grid-cols-2 md:items-center md:gap-x-16"
-          delay={0.1}
-        >
-          {/* Stacked brand images */}
-          <div className="flex items-center justify-center">
+            <div className="mt-10 min-h-[9rem]">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={active}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                >
+                  <h3 className="text-h3 font-bold tracking-tight text-ink">
+                    {items[active].brand}
+                  </h3>
+                  <p className="mt-1 text-sm font-medium text-accent-strong">
+                    {items[active].role}
+                  </p>
+                  <p className="mt-4 text-lg leading-relaxed text-ink-soft">
+                    {items[active].note}
+                  </p>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            <div className="mt-8 flex gap-3">
+              <button
+                type="button"
+                onClick={prev}
+                aria-label="Previous brand"
+                className="group flex h-11 w-11 items-center justify-center rounded-full border border-line bg-bg text-ink transition-colors hover:border-ink/30 hover:bg-surface"
+              >
+                <ArrowLeft className="h-5 w-5 transition-transform duration-300 group-hover:-translate-x-0.5" />
+              </button>
+              <button
+                type="button"
+                onClick={next}
+                aria-label="Next brand"
+                className="group flex h-11 w-11 items-center justify-center rounded-full border border-line bg-bg text-ink transition-colors hover:border-ink/30 hover:bg-surface"
+              >
+                <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-0.5" />
+              </button>
+            </div>
+          </Reveal>
+
+          {/* RIGHT: stacked rotating brand images */}
+          <Reveal
+            className="flex justify-center md:justify-end"
+            delay={0.1}
+          >
             <div className="relative aspect-[4/5] w-full max-w-xs">
               <AnimatePresence>
                 {items.map((it, i) => (
@@ -80,50 +120,8 @@ export function BrandWork() {
                 ))}
               </AnimatePresence>
             </div>
-          </div>
-
-          {/* Brand copy + controls */}
-          <div className="flex flex-col justify-center">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={active}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
-              >
-                <h3 className="text-h3 font-bold tracking-tight text-ink">
-                  {items[active].brand}
-                </h3>
-                <p className="mt-1 text-sm font-medium text-accent-strong">
-                  {items[active].role}
-                </p>
-                <p className="mt-6 text-lg leading-relaxed text-ink-soft">
-                  {items[active].note}
-                </p>
-              </motion.div>
-            </AnimatePresence>
-
-            <div className="mt-10 flex gap-3">
-              <button
-                type="button"
-                onClick={prev}
-                aria-label="Previous brand"
-                className="group flex h-11 w-11 items-center justify-center rounded-full border border-line bg-bg text-ink transition-colors hover:border-ink/30 hover:bg-surface"
-              >
-                <ArrowLeft className="h-5 w-5 transition-transform duration-300 group-hover:-translate-x-0.5" />
-              </button>
-              <button
-                type="button"
-                onClick={next}
-                aria-label="Next brand"
-                className="group flex h-11 w-11 items-center justify-center rounded-full border border-line bg-bg text-ink transition-colors hover:border-ink/30 hover:bg-surface"
-              >
-                <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-0.5" />
-              </button>
-            </div>
-          </div>
-        </Reveal>
+          </Reveal>
+        </div>
       </Container>
     </section>
   );
