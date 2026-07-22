@@ -26,25 +26,27 @@ function CaseCard({ c }: { c: CaseItem }) {
       </div>
 
       <div className="flex flex-1 flex-col p-6">
-        <span className="text-sm font-medium text-muted">{c.niche}</span>
-        {c.handle ? (
-          <span className="mt-0.5 text-sm font-semibold text-accent-strong">
-            {c.handle}
-          </span>
-        ) : null}
-        <div className="mt-4 flex items-baseline gap-3">
+        <div className="flex flex-wrap items-baseline gap-x-2">
+          <span className="text-sm font-medium text-muted">{c.niche}</span>
+          {c.handle ? (
+            <span className="text-sm font-semibold text-accent-strong">
+              {c.handle}
+            </span>
+          ) : null}
+        </div>
+        <div className="mt-3 flex items-baseline gap-3">
           <span className="text-lg text-muted line-through decoration-line decoration-1">
             {c.from}
           </span>
           <ArrowIcon className="h-4 w-4 text-accent" />
         </div>
         <div
-          className="mt-1 text-[2.6rem] font-extrabold leading-none tracking-tight text-ink"
+          className="mt-1 text-[2.35rem] font-extrabold leading-none tracking-tight text-ink"
           style={{ fontFamily: "var(--font-display)", fontStretch: "112%" }}
         >
           {c.to}
         </div>
-        <span className="mt-4 inline-flex w-fit items-center gap-1.5 rounded-full bg-accent-tint px-3 py-1 text-sm font-medium text-accent-strong">
+        <span className="mt-3 inline-flex w-fit items-center gap-1.5 rounded-full bg-accent-tint px-3 py-1 text-sm font-medium text-accent-strong">
           doubled in {c.timeframe}
         </span>
         <p className="mt-auto border-t border-line-soft pt-5 text-[0.95rem] italic text-ink-soft">
@@ -59,10 +61,12 @@ function CaseCard({ c }: { c: CaseItem }) {
  *  so short screenshots still make a full-height card. */
 function ProofCard({ p }: { p: ProofItem }) {
   return (
-    <article className={cardBase}>
-      <div className="shrink-0 bg-surface-2 p-4">
+    // Center the screenshot + caption as a group so shorter screenshots use the
+    // whole card height instead of pinning to the top.
+    <article className={`${cardBase} justify-center`}>
+      <div className="bg-surface-2 p-4">
         {/* One or more screenshots, stacked. Very tall ones clip to their top
-            (where the win is); the caption below fills the rest of the card. */}
+            (where the win is). */}
         <div className="flex max-h-[21rem] flex-col gap-2 overflow-hidden">
           {p.images.map((src, i) => (
             // eslint-disable-next-line @next/next/no-img-element
@@ -76,7 +80,7 @@ function ProofCard({ p }: { p: ProofItem }) {
           ))}
         </div>
       </div>
-      <div className="flex flex-1 flex-col justify-center p-6">
+      <div className="p-6">
         <span className="text-sm font-medium text-muted">{p.name}</span>
         <div
           className="mt-2 text-[1.75rem] font-extrabold leading-tight tracking-tight text-ink"
