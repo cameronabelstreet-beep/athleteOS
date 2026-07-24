@@ -32,16 +32,15 @@ export default function ApplyPage() {
         </div>
       </header>
 
-      <div className="mx-auto max-w-3xl px-5 py-14 sm:px-8 sm:py-20">
+      <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
+        <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-14">
         {/* Step 1: value video */}
-        <section className="text-center">
+        <section className="text-center lg:text-left">
           <p className="eyebrow">{applyPage.step1Label}</p>
-          <h1 className="mt-3 text-h2">{applyPage.videoHeading}</h1>
-          <p className="measure mx-auto mt-4 text-ink-soft">
-            {applyPage.videoSub}
-          </p>
+          <h1 className="mt-3 text-h3">{applyPage.videoHeading}</h1>
+          <p className="mt-3 text-ink-soft">{applyPage.videoSub}</p>
 
-          <div className="mt-8">
+          <div className="mt-6">
             {applyPage.videoEmbedUrl ? (
               <div className="aspect-video overflow-hidden rounded-2xl border border-line">
                 <iframe
@@ -70,16 +69,15 @@ export default function ApplyPage() {
         </section>
 
         {/* Step 2: inline application */}
-        <section className="mt-16 text-center sm:mt-20">
+        <section className="text-center lg:text-left">
           <p className="eyebrow">{applyPage.step2Label}</p>
-          <h2 className="mt-3 text-h2">{applyPage.formHeading}</h2>
-          <p className="measure mx-auto mt-4 text-ink-soft">
-            {applyPage.formSub}
-          </p>
-          <div className="mt-8">
+          <h2 className="mt-3 text-h3">{applyPage.formHeading}</h2>
+          <p className="mt-3 text-ink-soft">{applyPage.formSub}</p>
+          <div className="mt-6">
             <ApplyEmbed />
           </div>
         </section>
+        </div>
       </div>
 
       <footer className="border-t border-line py-8">
