@@ -10,13 +10,16 @@ import { Reveal } from "@/components/Reveal";
 // Fan layout for a brand's photo cluster: spreads N cards left to right, the
 // centre card sitting highest and flattest. No Math.random, so SSR stays stable.
 function fanStyle(i: number, n: number) {
-  if (n <= 1) return { x: 0, y: 0, rotate: 0, z: 20 };
+  if (n <= 1) return { x: "0%", y: 0, rotate: 0, z: 20 };
   const mid = (n - 1) / 2;
   const off = i - mid; // negative = left, positive = right
+  // Outer cards land at ±46% of their own width (so it scales with size), the
+  // spread distributed so the outermost cards sit at the same splay for any n.
+  const spread = 92 / (n - 1);
   return {
-    x: Math.round(off * 120),
-    y: Math.round(Math.abs(off) * 6),
-    rotate: off * 9,
+    x: `${off * spread}%`,
+    y: Math.round(Math.abs(off) * 8),
+    rotate: (off / mid) * 13, // outer cards ±13deg
     z: 20 - Math.round(Math.abs(off) * 2),
   };
 }
@@ -95,7 +98,7 @@ export function BrandWork() {
             className="flex justify-center md:justify-end"
             delay={0.1}
           >
-            <div className="relative aspect-[4/5] w-full max-w-sm">
+            <div className="relative aspect-[4/5] w-full max-w-md">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={active}
@@ -113,11 +116,11 @@ export function BrandWork() {
                     return (
                       <div
                         key={i}
-                        className="absolute left-1/2 top-1/2 w-[62%] -translate-x-1/2 -translate-y-1/2"
+                        className="absolute left-1/2 top-1/2 w-[68%] -translate-x-1/2 -translate-y-1/2"
                         style={{ zIndex: f.z }}
                       >
                         <motion.div
-                          initial={{ opacity: 0, scale: 0.9, y: 24, rotate: 0 }}
+                          initial={{ opacity: 0, scale: 0.9, x: "0%", y: 24, rotate: 0 }}
                           animate={{
                             opacity: 1,
                             scale: 1,
