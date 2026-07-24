@@ -1,13 +1,8 @@
-"use client";
-
-import { PopupButton } from "@typeform/embed-react";
-import { siteConfig } from "@/lib/content";
 import type { ReactNode } from "react";
 
-/** Resolve where every "Apply Here" CTA points. Falls back to the on-page
- *  apply section until the real Typeform URL is set in content.ts. */
-export const applyHref = siteConfig.typeformUrl || "#apply";
-export const isExternalApply = Boolean(siteConfig.typeformUrl);
+/** Every "Apply" CTA leads to the /apply funnel page (value video + inline form). */
+export const applyHref = "/apply";
+export const isExternalApply = false;
 
 /** Renders copy that may contain {accent:word} markup as an italic serif word. */
 export function AccentText({ text }: { text: string }) {
@@ -115,27 +110,10 @@ export function CTAButton({
       "border border-line bg-transparent text-ink hover:border-ink/30 hover:bg-surface hover:shadow-[0_16px_34px_-20px_oklch(0.24_0.01_265/0.4)]",
   };
   const classes = `${base} ${sizes[size]} ${variants[variant]} ${className}`;
-  const inner = (
-    <>
-      {children}
-      <ArrowIcon className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
-    </>
-  );
-
-  // When a Typeform ID is configured, every CTA opens the form in a popup
-  // overlay so people apply without leaving the page. Otherwise fall back to
-  // the on-page apply link.
-  if (siteConfig.typeformId) {
-    return (
-      <PopupButton id={siteConfig.typeformId} className={classes}>
-        {inner}
-      </PopupButton>
-    );
-  }
-
   return (
     <a href={href} className={classes}>
-      {inner}
+      {children}
+      <ArrowIcon className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
     </a>
   );
 }

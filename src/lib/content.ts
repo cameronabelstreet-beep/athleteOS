@@ -16,6 +16,23 @@ export const siteConfig = {
   contactEmail: "cameron@joinathleteos.com",
 };
 
+// The /apply funnel page: value video on top, Typeform embedded inline below.
+export const applyPage = {
+  step1Label: "Step 1",
+  videoHeading: "Watch the short video below",
+  videoSub:
+    "How the AthleteOS Acquisition Engine helps established coaches and influencers double their revenue in 60 days, without chasing clients or guessing at marketing. And how we install it for you, if you qualify.",
+  // Paste a YouTube/Vimeo embed URL here when the VSL is ready. Empty shows a
+  // placeholder. Example: "https://www.youtube.com/embed/XXXXXXXX".
+  videoEmbedUrl: "",
+  step2Label: "Step 2",
+  formHeading: "See if you qualify",
+  formSub:
+    "Complete the short application below. It takes 60 seconds. If you are a fit, you will be invited to book a free 15-minute Growth Audit with the team so we can map out your next steps.",
+  disclaimer:
+    "This site is not part of the Facebook website or Facebook Inc. It is not endorsed by Facebook in any way. Facebook is a trademark of Meta Platforms, Inc.",
+};
+
 export const nav = {
   links: [
     { label: "Results", href: "#results" },
