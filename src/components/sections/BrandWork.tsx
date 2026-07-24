@@ -14,9 +14,9 @@ function fanStyle(i: number, n: number) {
   const mid = (n - 1) / 2;
   const off = i - mid; // negative = left, positive = right
   return {
-    x: Math.round(off * 50),
-    y: Math.round(Math.abs(off) * 12),
-    rotate: off * 6,
+    x: Math.round(off * 120),
+    y: Math.round(Math.abs(off) * 6),
+    rotate: off * 9,
     z: 20 - Math.round(Math.abs(off) * 2),
   };
 }
@@ -113,7 +113,7 @@ export function BrandWork() {
                     return (
                       <div
                         key={i}
-                        className="absolute left-1/2 top-1/2 w-[72%] -translate-x-1/2 -translate-y-1/2"
+                        className="absolute left-1/2 top-1/2 w-[62%] -translate-x-1/2 -translate-y-1/2"
                         style={{ zIndex: f.z }}
                       >
                         <motion.div
