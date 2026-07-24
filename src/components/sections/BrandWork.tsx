@@ -13,13 +13,13 @@ function fanStyle(i: number, n: number) {
   if (n <= 1) return { x: "0%", y: 0, rotate: 0, z: 20 };
   const mid = (n - 1) / 2;
   const off = i - mid; // negative = left, positive = right
-  // Outer cards land at ±46% of their own width (so it scales with size), the
+  // Outer cards land at ±57% of their own width (so it scales with size), the
   // spread distributed so the outermost cards sit at the same splay for any n.
-  const spread = 92 / (n - 1);
+  const spread = 114 / (n - 1);
   return {
     x: `${off * spread}%`,
-    y: Math.round(Math.abs(off) * 8),
-    rotate: (off / mid) * 13, // outer cards ±13deg
+    y: Math.round(Math.abs(off) * 10),
+    rotate: (off / mid) * 16, // outer cards ±16deg
     z: 20 - Math.round(Math.abs(off) * 2),
   };
 }

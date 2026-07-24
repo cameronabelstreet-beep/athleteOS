@@ -161,8 +161,8 @@ export const brands = {
       role: "Athletic apparel campaign",
       note: "The brand positioning and marketing behind this collaboration. Full write-up coming soon.",
       images: [
-        "/brands/nike-jojo.jpg", // left
-        "/brands/nike-hat.jpg", // middle
+        "/brands/nike-hat.jpg", // left
+        "/brands/nike-jojo.jpg", // middle (front)
         "/brands/nike-jumping.jpg", // right
       ],
     },
