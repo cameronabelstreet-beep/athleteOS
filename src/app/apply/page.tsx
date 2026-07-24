@@ -32,15 +32,16 @@ export default function ApplyPage() {
         </div>
       </header>
 
-      <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
-        <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-14">
+      <div className="mx-auto max-w-[78rem] px-5 py-14 sm:px-8 sm:py-20">
+        <div className="grid gap-12 lg:grid-cols-2 lg:gap-14">
         {/* Step 1: value video */}
-        <section className="text-center lg:text-left">
+        <section className="flex flex-col text-center lg:text-left">
           <p className="eyebrow">{applyPage.step1Label}</p>
           <h1 className="mt-3 text-h3">{applyPage.videoHeading}</h1>
           <p className="mt-3 text-ink-soft">{applyPage.videoSub}</p>
 
-          <div className="mt-6">
+          <div className="mt-6 flex flex-1 items-center">
+            <div className="w-full">
             {applyPage.videoEmbedUrl ? (
               <div className="aspect-video overflow-hidden rounded-2xl border border-line">
                 <iframe
@@ -65,6 +66,7 @@ export default function ApplyPage() {
                 </div>
               </div>
             )}
+            </div>
           </div>
         </section>
 
