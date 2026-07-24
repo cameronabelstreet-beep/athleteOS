@@ -7,8 +7,19 @@ import { brands } from "@/lib/content";
 import { AccentText, Container, Eyebrow } from "@/components/primitives";
 import { Reveal } from "@/components/Reveal";
 
-// Fixed per-index tilt (no Math.random in render, so SSR stays stable).
-const TILTS = ["-6deg", "5deg", "-4deg", "6deg", "-5deg", "3deg"];
+// Fan layout for a brand's photo cluster: spreads N cards left to right, the
+// centre card sitting highest and flattest. No Math.random, so SSR stays stable.
+function fanStyle(i: number, n: number) {
+  if (n <= 1) return { x: 0, y: 0, rotate: 0, z: 20 };
+  const mid = (n - 1) / 2;
+  const off = i - mid; // negative = left, positive = right
+  return {
+    x: Math.round(off * 50),
+    y: Math.round(Math.abs(off) * 12),
+    rotate: off * 6,
+    z: 20 - Math.round(Math.abs(off) * 2),
+  };
+}
 
 export function BrandWork() {
   const items = brands.items;
@@ -79,45 +90,67 @@ export function BrandWork() {
             </div>
           </Reveal>
 
-          {/* RIGHT: stacked rotating brand images */}
+          {/* RIGHT: the active brand's photos, fanned out as a cluster */}
           <Reveal
             className="flex justify-center md:justify-end"
             delay={0.1}
           >
-            <div className="relative aspect-[4/5] w-full max-w-xs">
-              <AnimatePresence>
-                {items.map((it, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, scale: 0.9, y: 40 }}
-                    animate={{
-                      opacity: i === active ? 1 : 0.35,
-                      scale: i === active ? 1 : 0.92,
-                      y: i === active ? 0 : 18,
-                      rotate: i === active ? "0deg" : TILTS[i % TILTS.length],
-                      zIndex: i === active ? count : count - Math.abs(i - active),
-                    }}
-                    exit={{ opacity: 0, scale: 0.9, y: -40 }}
-                    transition={{ duration: 0.5, ease: "easeInOut" }}
-                    className="absolute inset-0 origin-bottom"
-                  >
-                    {it.image ? (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img
-                        src={it.image}
-                        alt={it.brand}
-                        draggable={false}
-                        className="h-full w-full rounded-3xl border border-line object-cover shadow-[0_20px_50px_-20px_oklch(0.24_0.01_265/0.5)]"
-                      />
-                    ) : (
-                      <div className="flex h-full w-full items-center justify-center rounded-3xl border border-line bg-gradient-to-br from-surface-2 to-accent-tint shadow-[0_20px_50px_-20px_oklch(0.24_0.01_265/0.5)]">
-                        <span className="text-sm font-semibold uppercase tracking-wider text-muted">
-                          {it.brand}
-                        </span>
+            <div className="relative aspect-[4/5] w-full max-w-sm">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={active}
+                  className="absolute inset-0"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
+                >
+                  {(items[active].images.length
+                    ? items[active].images
+                    : [""]
+                  ).map((src, i, arr) => {
+                    const f = fanStyle(i, arr.length);
+                    return (
+                      <div
+                        key={i}
+                        className="absolute left-1/2 top-1/2 w-[72%] -translate-x-1/2 -translate-y-1/2"
+                        style={{ zIndex: f.z }}
+                      >
+                        <motion.div
+                          initial={{ opacity: 0, scale: 0.9, y: 24, rotate: 0 }}
+                          animate={{
+                            opacity: 1,
+                            scale: 1,
+                            x: f.x,
+                            y: f.y,
+                            rotate: f.rotate,
+                          }}
+                          transition={{
+                            duration: 0.5,
+                            ease: "easeInOut",
+                            delay: i * 0.08,
+                          }}
+                        >
+                          {src ? (
+                            // eslint-disable-next-line @next/next/no-img-element
+                            <img
+                              src={src}
+                              alt={items[active].brand}
+                              draggable={false}
+                              className="aspect-[4/5] w-full rounded-3xl border border-line object-cover shadow-[0_20px_50px_-20px_oklch(0.24_0.01_265/0.5)]"
+                            />
+                          ) : (
+                            <div className="flex aspect-[4/5] w-full items-center justify-center rounded-3xl border border-line bg-gradient-to-br from-surface-2 to-accent-tint shadow-[0_20px_50px_-20px_oklch(0.24_0.01_265/0.5)]">
+                              <span className="text-sm font-semibold uppercase tracking-wider text-muted">
+                                {items[active].brand}
+                              </span>
+                            </div>
+                          )}
+                        </motion.div>
                       </div>
-                    )}
-                  </motion.div>
-                ))}
+                    );
+                  })}
+                </motion.div>
               </AnimatePresence>
             </div>
           </Reveal>

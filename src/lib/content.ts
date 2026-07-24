@@ -153,30 +153,42 @@ export const brands = {
   label: "Brand work",
   heading: "The same positioning I built for {accent:top} brands.",
   sub: "5+ years as a personal trainer, 100+ clients transformed, and a modeling career spent working with top athletic brands. The positioning and marketing that put me in the room is the exact system I now run for coaches.",
+  // Each brand can carry one or more photos. Multiple photos fan out as a
+  // small cluster (ordered left to right). Empty array shows a labeled tile.
   items: [
     {
       brand: "Nike",
       role: "Athletic apparel campaign",
       note: "The brand positioning and marketing behind this collaboration. Full write-up coming soon.",
-      image: "",
+      images: [
+        "/brands/nike-jojo.jpg", // left
+        "/brands/nike-hat.jpg", // middle
+        "/brands/nike-jumping.jpg", // right
+      ],
     },
     {
       brand: "Adidas",
       role: "Athletic apparel campaign",
       note: "The brand positioning and marketing behind this collaboration. Full write-up coming soon.",
-      image: "",
+      images: ["/brands/adidas-jersey.jpg", "/brands/adidas-on-screen.jpg"],
     },
     {
       brand: "Nocta",
       role: "Campaign feature",
       note: "The brand positioning and marketing behind this collaboration. Full write-up coming soon.",
-      image: "",
+      images: ["/brands/nocta-story.jpg", "/brands/nocta-hoodie.jpg"],
+    },
+    {
+      brand: "Brodie League",
+      role: "Campaign feature",
+      note: "The brand positioning and marketing behind this collaboration. Full write-up coming soon.",
+      images: ["/brands/brodie-league-1.jpg", "/brands/brodie-league-2.jpg"],
     },
     {
       brand: "The North Face",
       role: "Campaign feature",
       note: "The brand positioning and marketing behind this collaboration. Full write-up coming soon.",
-      image: "",
+      images: ["/brands/northface-billboard.jpg", "/brands/northface.png"],
     },
   ],
 };
